@@ -1,20 +1,24 @@
 import { useState } from 'react'
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css'
+import Footer from './Components/footer/Footer';
+import Navbar from './Components/navbar/Navbar'
+import Home from './Pages/Home/Home';
 
 function App() {
   
 
   return (
-    <div className="App flex flex-col justify-center items-center h-[100vh]">
-      
-      <h1 className='text-9xl text-blue-400'>Synkify App</h1>
-      
-      <p className="read-the-docs">
-        Development in progress
-      </p>
-    </div>
-  )
+    <>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route index element={<Home />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </>
+  );
 }
 
 export default App
