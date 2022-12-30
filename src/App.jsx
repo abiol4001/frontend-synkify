@@ -6,7 +6,7 @@ import Navbar from './Components/navbar/Navbar'
 import Home from './Pages/Home/Home';
 
 function App() {
-  
+
 
   return (
     <>
