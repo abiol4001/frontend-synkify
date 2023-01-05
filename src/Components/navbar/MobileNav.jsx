@@ -5,18 +5,18 @@ import { navbarList } from "../../Data/navbar";
 
 const MobileNav = ({ setIsOpen }) => {
   return (
-    <div className="fixed bg-blue-900 z-50 w-[100%] h-[100rem] right-0 top-0 ">
+    <div className="fixed bg-[#C5D7D9] z-50 w-[100%] h-[100rem] right-0 top-0 ">
       <button
-        className="absolute right-[6%] top-[1.5%] text-white text-[24px]"
+        className="absolute right-[12%] top-[1.5%] text-white text-[22px]"
         onClick={() => setIsOpen(false)}
       >
         <GrClose />
       </button>
       <ul className="mt-[60px]">
         {navbarList.navList.map(({ page, link }) => (
-            <Link key={link} to={link} onClick={() => setIsOpen(false)}>
-              <li className="p-4 font-[700] mx-3 text-white">{page}</li>
-            </Link>
+          <Link key={link} to={link} onClick={() => setIsOpen(false)}>
+            <li className="p-4 font-[700] mx-3 text-black">{page}</li>
+          </Link>
         ))}
       </ul>
     </div>
