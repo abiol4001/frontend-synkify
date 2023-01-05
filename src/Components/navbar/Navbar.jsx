@@ -5,14 +5,14 @@ import { BiMenu } from "react-icons/bi"
 import MobileNav from './MobileNav';
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className="py-4 px-10 md:px-[100px] max-w-[1600px] w-[100%] md:mt-4 mx-auto flex justify-between items-center bg-[#C5D7D9] absolute">
       <Link to="/">
         <img src="" alt="" />
         <p className="tablet:text-[28px] text-[18px] text-blue-400 font-[700]">
-          {navbarList.logo}
+          {navbarList.logo1}
         </p>
       </Link>
 

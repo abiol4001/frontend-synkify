@@ -21,7 +21,7 @@ export default function ComingSoon() {
               <img
                 src={logo}
                 alt="Logo"
-                className="h-[120px] w-[364px] object-cover"
+                className="h-[120px] w-[380px] object-cover"
               />
             </div>
             <div className="flex justify-center h-[50px]">
@@ -29,10 +29,10 @@ export default function ComingSoon() {
             </div>
           </div>
           <div className="w-[80%] md:w-[60%] mx-auto">
-            <h1 className="text-[#346265] text-4xl md:text-6xl text-center font-bold font-sans leading-tight">
+            <h1 className="text-[#346265] text-4xl md:text-5xl text-center font-bold font-sans leading-tight">
               Synkify is coming to you soon!
             </h1>
-            <div className="md:w-[90%] mx-auto">
+            <div className="md:w-[85%] mx-auto">
               <p className="text-lg md:text-[18px] text-black text-center md:text-start leading-loose md:leading-relaxed mt-4">
                 Never loose your consumers’ attention with Synkify. Engage with
                 more audience, respond promptly, and share relevant contents
@@ -46,7 +46,7 @@ export default function ComingSoon() {
                 placeholder="Email Address"
                 className="p-4 md:col-span-2 text-xl border border-[#5B9EA5] rounded-lg"
               />
-              <button className="bg-[#013B3F] text-white p-2 mx-4 rounded-lg text-xl">
+              <button className="bg-[#013B3F] text-white p-2 mx-4 rounded-lg text-xl hover:scale-90 transition duration-500">
                 NOTIFY ME
               </button>
             </div>
@@ -74,8 +74,8 @@ export default function ComingSoon() {
                 us on
               </h3>
               <div className="flex justify-end w-[30%] gap-10">
-                <img src={facebook} className="h-[40px] md:h-[60px]" />
-                <img src={twitter} className="h-[40px] md:h-[60px]" />
+                <a href="https://www.facebook.com/profile.php?id=100089188536675" target='_blank'><img src={facebook} className="h-[40px] md:h-[60px] hover:scale-125 transition duration-500" /></a>
+                <a href="https://twitter.com/synkify_" target='_blank'><img src={twitter} className="h-[40px] md:h-[60px] hover:scale-125 transition duration-500" /></a>
               </div>
             </div>
           </section>
