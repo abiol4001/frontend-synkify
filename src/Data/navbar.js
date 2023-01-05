@@ -66,3 +66,22 @@ export const footerNavList = {
 		},
 	],
 };
+
+// Coming Soon Navbar List
+export const csNavbarList = {
+	logo: "Synkify",
+	navList: [
+		{
+			page: "Home",
+			link: "/about",
+		},
+		{
+			page: "Contact",
+			link: "/platforms",
+		},
+		{
+			page: "About",
+			link: "/resources",
+		},
+	],
+};
