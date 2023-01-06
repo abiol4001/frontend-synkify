@@ -12,7 +12,7 @@ const Navbar = () => {
       <Link to="/">
         <img src="" alt="" />
         <p className="tablet:text-[28px] text-[18px] text-blue-400 font-[700]">
-          {navbarList.logo1}
+          {navbarList.logo}
         </p>
       </Link>
 
