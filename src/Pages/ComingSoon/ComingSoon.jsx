@@ -84,7 +84,7 @@ export default function ComingSoon() {
               <img src={synkifyText} alt="" />
             </div>
           </div>
-          <div className="w-[80%] md:w-[60%] mx-auto">
+          <div className="w-[80%] md:w-[60%] mx-auto py-3">
             <h1 className="text-[#346265] text-4xl md:text-5xl text-center font-bold font-sans leading-tight">
               Synkify is coming to you soon!
             </h1>
@@ -97,8 +97,8 @@ export default function ComingSoon() {
               </p>
             </div>
             <form
-              onClick={handleSubmit}
-              className="w-[90%] md:w-[80%] mx-auto my-8 relative grid grid-rows-2 md:grid-rows-1 gap-4 md:gap-0 md:grid-cols-3"
+              onSubmit={handleSubmit}
+              className="w-[90%] md:w-[80%] mx-auto my-8 relative grid grid-rows-2 md:grid-rows-1 gap-12 md:gap-0 md:grid-cols-3"
             >
               <input
                 type="email"
@@ -114,7 +114,7 @@ export default function ComingSoon() {
               >
                 NOTIFY ME
               </button>
-              <div className="absolute ml-4 -bottom-6">
+              <div className="absolute ml-4 md:-bottom-6 top-16">
                 <span
                   className={`${
                     valid ? "text-green-600" : "text-red-400"
