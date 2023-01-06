@@ -1,3 +1,5 @@
+import { logo } from "../assets";
+
 export const navbarList = {
 	logo: "Synkify",
 	navList: [
@@ -69,7 +71,7 @@ export const footerNavList = {
 
 // Coming Soon Navbar List
 export const csNavbarList = {
-	logo: "Synkify",
+	logo: logo,
 	navList: [
 		{
 			page: "Home",
