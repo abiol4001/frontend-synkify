@@ -1,12 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import { Period, MobileNav, Navbar } from "../../Components/ComingSoon";
 import { heroImage, facebook, twitter, synkifyText, logo } from "../../assets";
 import Countdown from "../../Components/countdown/Countdown";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ComingSoon() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [valid, setValid] = useState(false);
+
+  const success = () =>
+    toast.success("Thanks for your interest in Synkify", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+
+  const emailValidation = () => {
+    const regex = /\S+@\S+\.\S+/;
+
+    if (regex.test(email)) {
+      setValid(true);
+      setMessage("Email is valid");
+    } else if (email === "") {
+      setValid(false);
+      console.log(setMessage("Input your email address"));
+    } else if (!regex.test(email)) {
+      setValid(false);
+      setMessage("Email is invalid");
+    } else {
+      setMessage("");
+    }
+  };
+
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  // Posting email to the API
+  const handleSubmit = async (e) => {
+    const myData = {
+      email: email,
+    };
+    e.preventDefault();
+    if (valid) {
+      const result = await fetch(
+        "https://synkify-api.onrender.com/api/v1/newsletters",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(myData),
+        }
+      );
+      
+      success();
+      setEmail("");
+      setMessage("");
+    }
+  };
+
   return (
     <div className="w-full">
       <Navbar />
+      <ToastContainer
+        autoClose={2000} style={{
+          text: "center"
+        }}/>
       <div className="py-[50px]">
         <div className="max-w-[1400px] w-[90%] mx-auto">
           <div className="grid grid-rows-2 md:grid-rows-1 gap-8 md:gap-0 md:grid-cols-3 mb-[50px] place-items-center">
@@ -18,11 +78,7 @@ export default function ComingSoon() {
                   Logo
                 </h1>
               </div> */}
-              <img
-                src={logo}
-                alt="Logo"
-                className="h-[120px] w-[450px]"
-              />
+              <img src={logo} alt="Logo" className="h-[120px] w-[450px]" />
             </div>
             <div className="flex justify-center h-[50px]">
               <img src={synkifyText} alt="" />
@@ -40,16 +96,34 @@ export default function ComingSoon() {
                 updates when the website launches
               </p>
             </div>
-            <div className="w-[90%] md:w-[80%] mx-auto my-8 grid grid-rows-2 md:grid-rows-1 gap-4 md:gap-0 md:grid-cols-3">
+            <form
+              onClick={handleSubmit}
+              className="w-[90%] md:w-[80%] mx-auto my-8 relative grid grid-rows-2 md:grid-rows-1 gap-4 md:gap-0 md:grid-cols-3"
+            >
               <input
-                type="text"
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
                 placeholder="Email Address"
                 className="p-4 md:col-span-2 text-xl border border-[#5B9EA5] rounded-lg"
               />
-              <button className="bg-[#013B3F] text-white p-2 mx-4 rounded-lg text-xl hover:scale-90 transition duration-500">
+              <button
+                onClick={emailValidation}
+                className="bg-[#013B3F] text-white p-2 mx-4 rounded-lg text-xl hover:scale-90 transition duration-500"
+              >
                 NOTIFY ME
               </button>
-            </div>
+              <div className="absolute ml-4 -bottom-6">
+                <span
+                  className={`${
+                    valid ? "text-green-600" : "text-red-400"
+                  } text-sm`}
+                >
+                  {message}
+                </span>
+              </div>
+            </form>
           </div>
           <div className="w-[70%] mx-auto my-[60px] flex justify-center">
             <img src={heroImage} className="object-cover h-full" />
@@ -74,8 +148,21 @@ export default function ComingSoon() {
                 us on
               </h3>
               <div className="flex justify-end w-[30%] gap-5 md:gap-10 ">
-                <a href="https://www.facebook.com/profile.php?id=100089188536675" target='_blank'><img src={facebook} className="h-[40px] md:h-[60px] hover:scale-125 transition duration-500" /></a>
-                <a href="https://twitter.com/synkify_" target='_blank'><img src={twitter} className="h-[40px] md:h-[60px] hover:scale-125 transition duration-500" /></a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100089188536675"
+                  target="_blank"
+                >
+                  <img
+                    src={facebook}
+                    className="h-[40px] md:h-[60px] hover:scale-125 transition duration-500"
+                  />
+                </a>
+                <a href="https://twitter.com/synkify_" target="_blank">
+                  <img
+                    src={twitter}
+                    className="h-[40px] md:h-[60px] hover:scale-125 transition duration-500"
+                  />
+                </a>
               </div>
             </div>
           </section>
