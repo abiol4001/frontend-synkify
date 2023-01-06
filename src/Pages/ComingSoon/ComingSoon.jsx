@@ -21,7 +21,7 @@ export default function ComingSoon() {
               <img
                 src={logo}
                 alt="Logo"
-                className="h-[120px] w-[380px] object-cover"
+                className="h-[120px] w-[450px]"
               />
             </div>
             <div className="flex justify-center h-[50px]">
@@ -73,7 +73,7 @@ export default function ComingSoon() {
                 We post trends and challenges on our social media handle, follow
                 us on
               </h3>
-              <div className="flex justify-end w-[30%] gap-10">
+              <div className="flex justify-end w-[30%] gap-5 md:gap-10 ">
                 <a href="https://www.facebook.com/profile.php?id=100089188536675" target='_blank'><img src={facebook} className="h-[40px] md:h-[60px] hover:scale-125 transition duration-500" /></a>
                 <a href="https://twitter.com/synkify_" target='_blank'><img src={twitter} className="h-[40px] md:h-[60px] hover:scale-125 transition duration-500" /></a>
               </div>
