@@ -53,7 +53,7 @@ export default function ComingSoon() {
           body: JSON.stringify(myData),
         }
       );
-      
+
       success();
       setEmail("");
       setMessage("");
@@ -66,7 +66,7 @@ export default function ComingSoon() {
       <ToastContainer
         autoClose={2000} style={{
           text: "center"
-        }}/>
+        }} />
       <div className="py-[50px]">
         <div className="max-w-[1400px] w-[90%] mx-auto">
           <div className="grid grid-rows-2 md:grid-rows-1 gap-8 md:gap-0 md:grid-cols-3 mb-[50px] place-items-center">
@@ -116,9 +116,8 @@ export default function ComingSoon() {
               </button>
               <div className="absolute ml-4 -bottom-6">
                 <span
-                  className={`${
-                    valid ? "text-green-600" : "text-red-400"
-                  } text-sm`}
+                  className={`${valid ? "text-green-600" : "text-red-400"
+                    } text-sm`}
                 >
                   {message}
                 </span>
@@ -130,8 +129,8 @@ export default function ComingSoon() {
           </div>
           <section>
             <h3 className="text-[#1A4F52] text-xl md:text-3xl text-center font-bold font-sans leading-tight">
-              Hang on! we’ve got something exiting for you here. Let the
-              count-down begins
+              Hang on! we’ve got something exciting for you here. Let the
+              count-down begin
             </h3>
             {/* <div className="my-8 grid place-items-center grid-rows-1">
               <div className="flex gap-2">
