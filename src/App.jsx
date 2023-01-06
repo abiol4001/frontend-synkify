@@ -8,12 +8,10 @@ function App() {
   return (
     <>
       <Router>
-        <ComingSoon />
-        {/*
         <Routes>
           <Route index element={<Home />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
-        </Routes>*/}
+        </Routes>
       </Router>
     </>
   );
