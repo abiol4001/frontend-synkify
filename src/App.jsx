@@ -5,19 +5,21 @@ import Home from "./Pages/Home/Home";
 // import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 import SignUp from "./Pages/Auth/SignUp";
 import Login from "./Pages/Auth/Login";
+import Dashboard from './Components/Dashboard/Dashboard'
 
 function App() {
   return (
     <>
-      <Router>
-        {/* <ComingSoon /> */}
+      <Dashboard />
+      {/* <Router>
+        {/* <ComingSoon /> 
 
         <Routes>
           <Route index element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-      </Router>
+      </Router> */}
     </>
   );
 }

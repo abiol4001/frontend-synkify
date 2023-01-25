@@ -10,6 +10,7 @@ import Notification from './Notification';
 import Schedule from './Schedule';
 import Reminder from './Reminder';
 import Setting from './Setting';
+import SocialAccount from './SocialAccount';
 
 const Dashboard = () => {
     return (
@@ -25,6 +26,7 @@ const Dashboard = () => {
                     <Routes>
                         <Route index element={<Main />} />
                         <Route path="/main" element={<Main />} />
+                        <Route path="/account" element={<SocialAccount />} />
                         <Route path="/profile" element={<Profile />} />
                         <Route path="/post" element={<Post />} />
                         <Route path="/schedule" element={<Schedule />} />
