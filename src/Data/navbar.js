@@ -1,4 +1,5 @@
 import { logo } from "../assets";
+// import { profile } from "../assets";
 
 export const navbarList = {
 	logo: "Synkify",
@@ -26,6 +27,7 @@ export const navbarList = {
 	],
 };
 
+// footer Navbar List
 export const footerNavList = {
 	quickLinks: [
 		{
