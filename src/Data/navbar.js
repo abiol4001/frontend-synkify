@@ -5,24 +5,24 @@ export const navbarList = {
 	logo: "Synkify",
 	navList: [
 		{
-			page: "About Us",
+			page: "Home",
+			link: "/",
+		},
+		{
+			page: "About",
 			link: "/about",
 		},
 		{
-			page: "Platforms",
-			link: "/platforms",
+			page: "Contact us",
+			link: "/contact",
 		},
 		{
-			page: "Resources",
-			link: "/resources",
+			page: "FAQ",
+			link: "/faq",
 		},
 		{
-			page: "Pricing",
-			link: "/pricing",
-		},
-		{
-			page: "Login",
-			link: "/login",
+			page: "Blog",
+			link: "/blog",
 		},
 	],
 };
@@ -81,7 +81,7 @@ export const csNavbarList = {
 		},
 		{
 			page: "Contact",
-			link: "/platforms",
+			link: "/About",
 		},
 		{
 			page: "About",
