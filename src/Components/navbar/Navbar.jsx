@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="py-4 px-10 md:px-[100px] max-w-[1600px] w-[100%] md:mt-4 mx-auto flex justify-between items-center bg-[#C5D7D9] absolute">
+    <div className="py-4 px-10 md:px-[100px] max-w-[1600px] w-[100%] md:mt-4 mx-auto flex justify-between items-center">
       <Link to="/">
         <img src="" alt="" />
         <p className="tablet:text-[28px] text-[18px] text-blue-400 font-[700]">
@@ -17,12 +17,17 @@ const Navbar = () => {
       </Link>
 
       <div>
-        <ul className="hidden md:flex ">
+        <ul className="hidden md:flex items-center">
           {navbarList.navList.map(({ page, link }) => (
             <Link className="mx-3 " key={link} to={link}>
-              <li className="p-3 mb-2 font-[700] navbar">{page}</li>
+              <li className="p-3 mb-2 md:mb-0 text-[#696869] font-[400] navbar">
+                {page}
+              </li>
             </Link>
           ))}
+          <button className="text-[16px] font-[400] text-[#414041] border border-red-500 rounded-3xl px-6 h-10">
+            Login
+          </button>
         </ul>
       </div>
 

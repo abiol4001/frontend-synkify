@@ -5,20 +5,21 @@ import Home from "./Pages/Home/Home";
 import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 import SignUp from "./Pages/Auth/SignUp";
 import Login from "./Pages/Auth/Login";
+import Navbar from "./Components/navbar/Navbar";
+import Footer from "./Components/footer/Footer";
 
 function App() {
   return (
-    <>
+    <div className="max-w-[1600px] mx-auto">
       <Router>
         {/* <ComingSoon /> */}
-        
         <Routes>
           <Route index element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 
