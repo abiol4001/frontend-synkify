@@ -9,9 +9,9 @@ import { FaTwitterSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className='w-full h-[34rem] bg-[url("./assets/bg-footer.svg")] bg-no-repeat bg-cover pt-52 text-white'>
+    <div className='w-full h-[34rem] bg-white text-black md:bg-[url("./assets/bg-footer.svg")]  bg-no-repeat bg-cover pt-52 md:text-white'>
       <div className='flex flex-col justify-center items-center w-3/4 h-72 mx-auto'>
-        <div className='flex justify-around w-full'>
+        <div className='flex justify-around w-full flex-col md:flex-row'>
           <div>
             <Link to="/">
               <img src="" alt="" />
