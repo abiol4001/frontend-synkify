@@ -4,15 +4,17 @@ import { TextInput } from "../../Components";
 
 function Login() {
   return (
-    <main className="h-screen grid grid-cols-2">
+    <main className="h-screen grid lg:grid-cols-2">
       {/* Left Column */}
       <section
-        className="bg-cover"
+        className="bg-cover hidden lg:block"
         style={{ backgroundImage: `url("${background}")` }}
       >
         <div className="bg-gradient-to-r from-black grid place-items-center">
           <div className="w-4/5 h-screen py-[40px] flex flex-col justify-between">
-            <img src={logo} alt="Website Logo" className="w-[184px]" />
+            <div className="h-[50px]">
+              <img src={logo} alt="Website Logo" className="w-[184px] hidden" />
+            </div>
             <div className="w-[480px]">
               <h1 className="text-5xl text-white font-['Open_Sans'] font-bold leading-[60px]">
                 Managing your Social <br />
@@ -23,7 +25,6 @@ function Login() {
                 You can post instant content with Synkify whenever you want to
                 your selected social media accounts.
               </p>
-              
             </div>
             <div className="flex gap-[40px]">
               <a
@@ -50,11 +51,12 @@ function Login() {
       </section>
       {/* Right Column */}
       <section className="grid place-items-center bg-[#EBEAEB] overflow-y-scroll">
-        <div className="w-4/5 py-[40px] flex flex-col">
-          <h2 className="text-3xl text-[#C58865] text-center font-['Open_Sans'] font-bold leading-[36px]">
+        <div className="w-[90%] lg:w-4/5 py-[40px] flex flex-col">
+        <img src={logo} alt="Website Logo" className="w-[100px] lg:w-[184px] mx-auto mb-8 lg:hidden" />
+          <h2 className="text-2xl lg:text-4xl text-[#C58865] text-center font-['Open_Sans'] font-bold leading-[36px]">
             LOGIN
           </h2>
-          <h3 className="font-normal text-[#191819] text-xl my-[30px]">
+          <h3 className="font-normal text-[#191819] text-lg lg:text-xl text-center lg:text-left my-[30px]">
             <span className="font-bold">Welcome!</span> Sign in to stay
             connected on Synkify
           </h3>
@@ -86,7 +88,7 @@ function Login() {
                 </p>
               </div>
               <a
-                href=""
+                href="/forget-pass"
                 className="text-xl text-[#C58865] font-['Open_Sans'] font-normal"
               >
                 Forgot Password
@@ -95,23 +97,20 @@ function Login() {
             <input
               type="submit"
               value="LOG IN YOUR ACCOUNT"
-              className="text-white text-lg bg-[#013135] py-5 px-6 my-0 mx-auto"
+              className="text-white text-sm lg:text-lg bg-[#013135] py-5 px-6 my-0 mx-auto"
             />
           </form>
           <div>
-            <div className="flex items-center gap-3 mt-[50px]">
-              <p
-                href=""
-                className="text-xl text-[#424848] font-['Open_Sans'] font-normal"
-              >
+            <div className="flex flex-col lg:flex-row items-center gap-3 mt-[50px]">
+              <p className="text-lg lg:text-xl text-[#424848] font-['Open_Sans'] font-normal">
                 Don't have an account?
               </p>
-              <p
-                href=""
-                className="text-xl text-[#C58865] font-['Open_Sans'] font-normal"
+              <a
+                href="/sign-up"
+                className="text-lg lg:text-xl text-[#C58865] font-['Open_Sans'] font-normal"
               >
                 Create an account
-              </p>
+              </a>
             </div>
           </div>
         </div>
