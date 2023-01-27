@@ -8,18 +8,20 @@ import Login from "./Pages/Auth/Login";
 import ForgetPassword from "./Pages/Auth/ForgetPassword";
 import Navbar from "./Components/navbar/Navbar";
 import Footer from "./Components/footer/Footer";
+import Dashboard from './Components/Dashboard/Dashboard'
 
 
 function App() {
   return (
     <div className="max-w-[1600px] mx-auto">
+      {/* <Dashboard /> */}
       <Router>
-        {/* <ComingSoon /> */}
+        {/* <ComingSoon />*/}
         <Routes>
           <Route index element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/forget-pass" element={<ForgetPassword/>}/>
+          <Route path="/forget-pass" element={<ForgetPassword />} />
         </Routes>
       </Router>
     </div>
