@@ -16,18 +16,21 @@ const Navbar = () => {
         </p>
       </Link>
 
-      <div>
+      <div className=" md:w-[80%] lg:w-[65%] ">
         <ul className="hidden md:flex items-center">
           {navbarList.navList.map(({ page, link }) => (
             <Link className="mx-3 " key={link} to={link}>
-              <li className="p-3 mb-2 md:mb-0 text-[#696869] font-[400] navbar">
+              <li className="p-3 mb-2 md:mb-0 text-[#696869] font-[400] navbar hover:underline underline-offset-4 decoration-2 decoration-[#2B5C5F] hover:text-[#2B5C5F]">
                 {page}
               </li>
             </Link>
           ))}
-          <button className="text-[16px] font-[400] text-[#414041] border border-red-500 rounded-3xl px-6 h-10">
+          <Link
+            to="/login"
+            className="text-[16px] font-[400] text-[#414041] border border-red-500 rounded-3xl px-6 h-10 p-2 ml-auto hover:bg-red-500 hover:text-white"
+          >
             Login
-          </button>
+          </Link>
         </ul>
       </div>
 
