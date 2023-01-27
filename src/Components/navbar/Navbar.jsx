@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { navbarList } from "../../Data/navbar";
-import { BiMenu } from "react-icons/bi"
-import MobileNav from './MobileNav';
+import { BiMenu } from "react-icons/bi";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="py-4 px-10 md:px-[100px] max-w-[1600px] w-[100%] md:mt-4 mx-auto flex justify-between items-center">
@@ -43,6 +43,6 @@ const Navbar = () => {
       {isOpen && <MobileNav setIsOpen={setIsOpen} />}
     </div>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
