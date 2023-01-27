@@ -4,15 +4,17 @@ import { TextInput } from "../../Components";
 
 function SignUp() {
   return (
-    <main className="h-screen grid grid-cols-2">
+    <main className="h-screen grid lg:grid-cols-2">
       {/* Left Column */}
       <section
-        className="bg-cover"
+        className="bg-cover hidden lg:block"
         style={{ backgroundImage: `url("${background}")` }}
       >
         <div className="bg-gradient-to-r from-black grid place-items-center">
-          <div className="w-4/5 h-screen py-[40px] flex flex-col justify-between">
-            <img src={logo} alt="Website Logo" className="w-[184px]" />
+          <div className="w-[90%] lg:w-4/5 h-screen py-[40px] flex flex-col justify-between">
+            <div className="h-[50px]">
+              <img src={logo} alt="Website Logo" className="w-[184px] hidden" />
+            </div>
             <div className="w-[480px]">
               <h1 className="text-5xl text-white font-['Open_Sans'] font-bold leading-[60px]">
                 Synk your social <br />
@@ -60,8 +62,9 @@ function SignUp() {
       </section>
       {/* Right Column */}
       <section className="grid place-items-center bg-[#EBEAEB] overflow-y-scroll">
-        <div className="w-4/5 py-[40px] flex flex-col">
-          <h2 className="text-3xl text-[#C58865] font-['Open_Sans'] font-bold leading-[36px] mb-[50px]">
+        <div className="w-[90%] lg:w-4/5 py-[40px] flex flex-col">
+        <img src={logo} alt="Website Logo" className="w-[100px] lg:w-[184px] mx-auto mb-8 lg:hidden" />
+          <h2 className="text-2xl lg:text-4xl text-[#C58865] font-['Open_Sans'] font-bold leading-[36px] mb-[50px]">
             Create an account to use all the features of Synkify's platform
           </h2>
           <form action="" className="flex flex-col gap-[30px]">
@@ -93,7 +96,7 @@ function SignUp() {
                 id="terms"
                 className="w-5 h-5"
               />
-              <p className="text-xl text-[#424848] font-['Open_Sans'] font-normal">
+              <p className="text-lg lg:text-xl text-[#424848] font-['Open_Sans'] font-normal">
                 I have read and agree with{" "}
                 <span className="text-[#C58865]">Terms of Service</span> and our{" "}
                 <span className="text-[#C58865]">Privacy Policy</span>
@@ -102,46 +105,43 @@ function SignUp() {
             <input
               type="submit"
               value="CREATE AN ACCOUNT"
-              className="text-white text-lg bg-[#013135] py-5 px-6 my-0 mx-auto"
+              className="text-white text-sm lg:text-lg bg-[#013135] py-5 px-6 my-0 mx-auto"
             />
           </form>
           <div>
             <p className="text-xl text-[#424848] text-center font-['Open_Sans'] font-normal my-[50px]">
               OR
             </p>
-            <div className="flex justify-between">
-              <div className="flex items-center gap-1 border border-[#C58865] p-1">
+            <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 justify-between">
+              <div className="flex items-center justify-center lg:justify-start rounded-lg gap-1 border border-[#C58865] p-1">
                 <img src={google} className="w-6 h-6" alt="" />
-                <p
-                  href=""
-                  className="text-xl text-[#424848] font-['Open_Sans'] font-normal"
+                <a
+                  href="#"
+                  className="text-lg lg:text-xl text-[#424848] font-['Open_Sans'] font-normal"
                 >
                   Sign up with Google
-                </p>
+                </a>
               </div>
-              <div className="flex items-center gap-1 border border-[#C58865] p-1">
+              <div className="flex items-center justify-center lg:justify-start rounded-lg gap-1 border border-[#C58865] p-1">
                 <img src={facebook} className="w-6 h-6" alt="" />
-                <p
-                  href=""
-                  className="text-xl text-[#424848] font-['Open_Sans'] font-normal"
+                <a
+                  href="#"
+                  className="text-lg lg:text-xl text-[#424848] font-['Open_Sans'] font-normal"
                 >
                   Sign up with Facebook
-                </p>
+                </a>
               </div>
             </div>
-            <div className="flex items-center gap-3 mt-[50px]">
-              <p
-                href=""
-                className="text-xl text-[#424848] font-['Open_Sans'] font-normal"
-              >
-                You have an accounT already?
+            <div className="flex items-center flex-col lg:flex-row gap-3 mt-[50px]">
+              <p className="text-lg lg:text-xl text-[#424848] font-['Open_Sans'] font-normal">
+                You have an account already?
               </p>
-              <p
-                href=""
-                className="text-xl text-[#C58865] font-['Open_Sans'] font-normal"
+              <a
+                href="/login"
+                className="text-lg lg:text-xl text-[#C58865] font-['Open_Sans'] font-normal"
               >
                 LOG IN
-              </p>
+              </a>
             </div>
           </div>
         </div>

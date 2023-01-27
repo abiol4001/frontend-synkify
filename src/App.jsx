@@ -5,8 +5,10 @@ import Home from "./Pages/Home/Home";
 // import ComingSoon from "./Pages/ComingSoon/ComingSoon";
 import SignUp from "./Pages/Auth/SignUp";
 import Login from "./Pages/Auth/Login";
+import ForgetPassword from "./Pages/Auth/ForgetPassword";
 import Navbar from "./Components/navbar/Navbar";
 import Footer from "./Components/footer/Footer";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/forget-pass" element={<ForgetPassword/>}/>
         </Routes>
       </Router>
     </div>

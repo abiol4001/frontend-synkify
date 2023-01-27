@@ -14,6 +14,7 @@ import getStarted from "./get--started.png";
 import connect from "./connect.png";
 import audience1 from "./audience-1.png";
 import audience2 from "./audience-2.png";
+import forgetPassword from "./forget-password.png"
 // import audience3 from "./audience-3.png"
 
 export {
@@ -33,4 +34,5 @@ export {
 	getStarted,
 	audience1,
 	audience2,
+	forgetPassword
 };
