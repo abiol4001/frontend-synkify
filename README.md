@@ -9,8 +9,8 @@ This project is going to solve a problem among business owners and Social Media 
 ## Stack
 
 For this project, we used the following:
-1.Reactjs
-2.TailwindCss
+1. Reactjs
+2. TailwindCss
 
 ## URL
 
