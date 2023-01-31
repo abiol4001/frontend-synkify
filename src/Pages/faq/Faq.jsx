@@ -30,8 +30,8 @@ const Faq = () => {
     };
 
     return (
-        <div className="w-1/2 mx-auto my-10">
-            <h1 className="text-center text-5xl" style={{ fontWeight: '700', lineHeight: '60px' }}>Frequently asked questions?</h1>
+        <div className="lg:w-1/2 w-[95%] mx-auto my-10">
+            <h1 className="text-center text-4xl md:text-5xl" style={{ fontWeight: '700', lineHeight: '60px' }}>Frequently asked questions?</h1>
             <p className="text-center mb-8">Are you unsure of how Synkify platform works? We’ve have answers for you here</p>
             <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
                 <AccordionHeader onClick={() => handleOpen(1)}>
