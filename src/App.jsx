@@ -9,6 +9,7 @@ import ForgetPassword from "./Pages/Auth/ForgetPassword";
 import Navbar from "./Components/navbar/Navbar";
 import Footer from "./Components/footer/Footer";
 import Dashboard from './Components/Dashboard/Dashboard'
+import Faq from './Pages/faq/Faq'
 
 
 function App() {
@@ -16,13 +17,16 @@ function App() {
     <div className="max-w-[1600px] mx-auto">
       {/* <Dashboard /> */}
       <Router>
+        <Navbar />
         {/* <ComingSoon />*/}
         <Routes>
           <Route index element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forget-pass" element={<ForgetPassword />} />
+          <Route path="/faq" element={<Faq />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

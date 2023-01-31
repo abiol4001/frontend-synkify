@@ -11,7 +11,6 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
       <section className="hero lg:flex w-[100%] px-[15px] md:px-[30px] lg:px-[124px] gap-4 pt-[80px] mb-[50px]">
         <div className="lg:w-[55%]">
           <h3 className="text-[40px] text-center md:text-start md:text-[48px] font-[700] leading-tight mb-[30px]">
@@ -154,7 +153,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <Footer />
     </div>
   );
 };
