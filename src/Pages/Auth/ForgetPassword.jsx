@@ -4,7 +4,7 @@ import { TextInput2 } from "../../Components";
 
 function ForgetPassword() {
   return (
-    <main className="h-screen grid lg:grid-cols-2">
+    <main className="h-screen grid lg:grid-cols-2" style={{ width: '70%', margin: '80px auto', }}>
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"

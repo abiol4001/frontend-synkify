@@ -9,7 +9,7 @@ import { FaTwitterSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className='w-full h-[34rem] bg-white text-black md:bg-[url("./assets/bg-footer.svg")]  bg-no-repeat bg-cover pt-52 md:text-white'>
+    <div className='w-full h-[45rem] lg:h-[34rem] bg-blue-gray-50 text-black md:bg-transparent md:bg-[url("./assets/bg-footer.svg")] bg-no-repeat bg-cover pt-52 md:text-white'>
       <div className='flex flex-col justify-center items-center w-3/4 h-72 mx-auto'>
         <div className='flex justify-around w-full flex-col md:flex-row'>
           <div>
@@ -24,7 +24,7 @@ const Footer = () => {
             <p>+234-08000000000</p>
           </div>
           <div>
-            <h2 className='mb-4 font-[700] text-[24px]'>Quick Links</h2>
+            <h2 className='my-4 font-[700] text-[24px]'>Quick Links</h2>
             <ul>
               {footerNavList.quickLinks.map(({ page, link }) => (
                 <Link key={link} to={link}>
@@ -34,7 +34,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className='mb-4 font-[700] text-[24px]'>Support</h2>
+            <h2 className='my-4 font-[700] text-[24px]'>Support</h2>
             <ul>
               {footerNavList.support.map(({ page, link }) => (
                 <Link key={link} to={link}>
@@ -44,7 +44,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className='mb-4 font-[700] text-[24px]'>Follow Us</h2>
+            <h2 className='my-4 font-[700] text-[24px]'>Follow Us</h2>
             <div className='flex justify-between'>
               <a href='#!' role='button' className='text-[30px]'> <FaTwitterSquare /></a>
               <a href='#!' role='button' className='text-[30px]'> <FaFacebook /></a>
