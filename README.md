@@ -8,8 +8,8 @@ This project is going to solve a problem among business owners and Social Media 
 
 ## Stack
 
-For this project, we used the following:\
-1.Reactjs\
+For this project, we used the following:
+1.Reactjs
 2.TailwindCss
 
 ## URL
@@ -18,9 +18,9 @@ https://synkify.netlify.app/
 
 ## Teams
 
-We are team of 3 people:\
-1. Abdullah Oyewole\
-2. Nwafor Stellamaris - https://www.linkedin.com/in/stellamaris-chinwendu/\
+We are team of 3 people:
+1. Abdullah Oyewole
+2. Nwafor Stellamaris - https://www.linkedin.com/in/stellamaris-chinwendu/
 3. Abiola Adeosun
 
 ## Getting Started.
