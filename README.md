@@ -19,9 +19,9 @@ https://synkify.netlify.app/
 ## Teams
 
 We are team of 3 people:\
-1.Abdullah Oyewole\
-2.Nwafor Stellamaris\
-3.Abiola Adeosun
+1. Abdullah Oyewole\
+2. Nwafor Stellamaris - https://www.linkedin.com/in/stellamaris-chinwendu/\
+3. Abiola Adeosun
 
 ## Getting Started.
 
