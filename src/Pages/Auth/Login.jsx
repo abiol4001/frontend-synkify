@@ -52,7 +52,7 @@ function Login() {
       {/* Right Column */}
       <section className="grid place-items-center bg-[#EBEAEB] overflow-y-scroll">
         <div className="w-[90%] lg:w-4/5 py-[40px] flex flex-col">
-        <img src={logo} alt="Website Logo" className="w-[100px] lg:w-[184px] mx-auto mb-8 lg:hidden" />
+          <img src={logo} alt="Website Logo" className="w-[100px] lg:w-[184px] mx-auto mb-8 lg:hidden" />
           <h2 className="text-2xl lg:text-4xl text-[#C58865] text-center font-['Open_Sans'] font-bold leading-[36px]">
             LOGIN
           </h2>
@@ -60,7 +60,7 @@ function Login() {
             <span className="font-bold">Welcome!</span> Sign in to stay
             connected on Synkify
           </h3>
-          <form action="" className="flex flex-col gap-[30px]">
+          <form className="flex flex-col gap-[30px]">
             <TextInput
               id="email"
               title="Email Address"
