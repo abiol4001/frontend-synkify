@@ -58,15 +58,16 @@ const Home = () => {
           Integrate multiple social media platforms on one Interface
         </h4>
         <div className="lg:flex mt-14">
-          <div className="lg:w-1/2 mb-6">
-            <img src={featuresImage} alt="" className="w-[100%]" />
+          <div className="lg:w-1/2 h-[626px]">
+            <img src={featuresImage} alt="" className="w-[100%] h-[100%]" />
           </div>
-          <div className="flex flex-col lg:w-1/2 items-center lg:items-end md:mt-24">
+          <div className="flex flex-col lg:w-1/2 items-center lg:items-end py-6">
             {featuresList.map((item, i) => (
               <div
                 key={i}
-                className={`max-w-[486px] flex flex-col items-center border border-1 border-[#5B9EA5] rounded-lg p-3 group hover:bg-[#5B9EA5] transition-all ${i === 0 ? "" : "mt-6"
-                  }`}
+                className={`max-w-[486px] flex flex-col items-center border border-1 border-[#5B9EA5] rounded-lg p-3 group hover:bg-[#5B9EA5] transition-all ${
+                  i === 0 ? "" : "mt-4"
+                }`}
               >
                 <img
                   src={item.icon}

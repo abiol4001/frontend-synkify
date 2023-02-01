@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home";
@@ -6,9 +5,9 @@ import Home from "./Pages/Home/Home";
 import SignUp from "./Pages/Auth/SignUp";
 import Login from "./Pages/Auth/Login";
 import ForgetPassword from "./Pages/Auth/ForgetPassword";
+// import Dashboard from "./Components/Dashboard/Dashboard";
 import Navbar from "./Components/navbar/Navbar";
 import Footer from "./Components/footer/Footer";
-import Dashboard from './Components/Dashboard/Dashboard'
 import Faq from './Pages/faq/Faq'
 
 
