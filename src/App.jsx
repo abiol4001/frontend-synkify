@@ -20,6 +20,8 @@ import Notification from "./Components/Dashboard/Notification";
 import Reminder from "./Components/Dashboard/Reminder";
 import Setting from "./Components/Dashboard/Setting";
 import Protected from "./Protected";
+import Blog from "./Pages/blog/Blog";
+import About from './Pages/About/About'
 
 
 // const DashboardRouter = () => {
@@ -53,6 +55,9 @@ function App() {
           <Route path="/forget-pass" element={<ForgetPassword />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+
 
           <Route
             path="/dashboard"

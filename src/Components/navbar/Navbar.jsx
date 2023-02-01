@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { navbarList } from "../../Data/navbar";
 import { synkify } from "../../assets";
 import { BiMenu } from "react-icons/bi";
@@ -17,11 +17,14 @@ const Navbar = () => {
       <div className=" md:w-[80%] lg:w-[65%] ">
         <ul className="hidden md:flex items-center">
           {navbarList.navList.map(({ page, link }) => (
-            <Link className="mx-3 " key={link} to={link}>
-              <li className="p-3 mb-2 md:mb-0 text-[#696869] font-[400] navbar hover:underline underline-offset-4 decoration-2 decoration-[#2B5C5F] hover:text-[#2B5C5F]">
+            <NavLink className="mx-3 " key={link} to={link} style={({ isActive }) => ({
+              borderBottom: isActive ? '2px solid #2B5C5F' : 'none',
+              fontWeight: isActive ? '700' : '400'
+            })}>
+              <li className="p-3 mb-2 md:mb-0 text-[#696869] navbar hover:border-b-2 hover:border-[#2B5C5F] hover:text-[#2B5C5F]">
                 {page}
               </li>
-            </Link>
+            </NavLink>
           ))}
           <Link
             to="/login"

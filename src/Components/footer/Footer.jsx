@@ -9,7 +9,7 @@ import { FaTwitterSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className='w-full h-[45rem] lg:h-[34rem] bg-blue-gray-50 text-black md:bg-transparent md:bg-[url("./assets/bg-footer.svg")] bg-no-repeat bg-cover pt-52 md:text-white'>
+    <div className='w-full h-[45rem] lg:h-[34rem] bg-blue-gray-50 text-black md:bg-transparent lg:bg-[url("./assets/bg-footer.svg")] bg-no-repeat bg-cover pt-52 md:text-white'>
       <div className='flex flex-col justify-center items-center w-3/4 h-72 mx-auto'>
         <div className='flex justify-around w-full flex-col md:flex-row'>
           <div>
@@ -28,7 +28,7 @@ const Footer = () => {
             <ul>
               {footerNavList.quickLinks.map(({ page, link }) => (
                 <Link key={link} to={link}>
-                  <li className=''>{page}</li>
+                  <li className='hover:underline decoration-[#fff]'>{page}</li>
                 </Link>
               ))}
             </ul>
@@ -38,7 +38,7 @@ const Footer = () => {
             <ul>
               {footerNavList.support.map(({ page, link }) => (
                 <Link key={link} to={link}>
-                  <li className='mb-0'>{page}</li>
+                  <li className='mb-0 hover:underline decoration-[#fff]'>{page}</li>
                 </Link>
               ))}
             </ul>
@@ -46,10 +46,10 @@ const Footer = () => {
           <div>
             <h2 className='my-4 font-[700] text-[24px]'>Follow Us</h2>
             <div className='flex justify-between'>
-              <a href='#!' role='button' className='text-[30px]'> <FaTwitterSquare /></a>
-              <a href='#!' role='button' className='text-[30px]'> <FaFacebook /></a>
-              <a href='#!' role='button' className='text-[30px]'> <FaInstagram /></a>
-              <a href='#!' role='button' className='text-[30px]'> <FaLinkedin /></a>
+              <a href='#!' role='button' className='text-[30px] hover:text-[#BF7B54]'> <FaTwitterSquare /></a>
+              <a href='#!' role='button' className='text-[30px] hover:text-[#BF7B54]'> <FaFacebook /></a>
+              <a href='#!' role='button' className='text-[30px] hover:text-[#BF7B54]'> <FaInstagram /></a>
+              <a href='#!' role='button' className='text-[30px] hover:text-[#BF7B54]'> <FaLinkedin /></a>
             </div>
           </div>
         </div>
