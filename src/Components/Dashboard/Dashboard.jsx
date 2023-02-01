@@ -24,7 +24,7 @@ const Dashboard = () => {
                 <div>
                     <Header />
                     <Routes>
-                        <Route index element={<Main />} />
+                        <Route path='/dashboard' index element={<Main />} />
                         <Route path="/main" element={<Main />} />
                         <Route path="/account" element={<SocialAccount />} />
                         <Route path="/profile" element={<Profile />} />
