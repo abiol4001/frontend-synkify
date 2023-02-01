@@ -1,10 +1,85 @@
-import React from "react";
+import axios, { Axios } from "axios";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { logo, facebook, background } from "../../assets";
 import { TextInput } from "../../Components";
 
+const EMAIL_REGEX = /\S+@\S+\.\S+/;
+const PWD_REGEX =
+  /^[!@#$%^&*(),.?":{}|<>]{1}[A-Za-z\d!@#$%^&*(),.?":{}|<>]{7,}$/;
+  // /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
 function Login() {
+  const navigate = useNavigate()
+  const [email, setEmail] = useState("");
+  const [validEmail, setValidEmail] = useState(false);
+
+  const [password, setPassword] = useState("");
+  const [validPwd, setValidPwd] = useState(false);
+
+  const [allValid, setAllValid] = useState(false);
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    const result = EMAIL_REGEX.test(email);
+    setValidEmail(result);
+    console.log("email " + result);
+  }, [email]);
+
+  useEffect(() => {
+    const result = PWD_REGEX.test(password);
+    setValidPwd(result);
+    console.log('pwd ' + result)
+    console.log(password)
+  }, [password]);
+
+  const isValid = () => {
+    if (validEmail && validPwd) {
+      return setAllValid(true);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    const myData = {
+      email: email,
+      password: password,
+    };
+    e.preventDefault();
+    if (allValid) {
+      // const result = await fetch(
+      //   "https://synkify-api.onrender.com/api/v1/auth/login",
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(myData),
+      //   }
+      // );
+      // if (data.error) {
+      //   setError(data.error);
+      // } else {
+      //   // Redirect the user to the dashboard
+      //   window.location.href = "/dashboard";
+      // }
+
+      axios
+        .post("https://synkify-api.onrender.com/api/v1/auth/login", {
+          email,
+          password,
+        })
+        .then((res) => {
+          localStorage.setItem("token", res.data.token)
+          navigate("/dashboard")
+        })
+        .catch((err) => console.error(err));
+
+    }
+    console.log("All info " + allValid);
+  };
+
   return (
-    <main className="h-screen grid lg:grid-cols-2" style={{ width: '70%', margin: '80px auto', }}>
+    <main className="h-screen grid lg:grid-cols-2">
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"
@@ -15,13 +90,13 @@ function Login() {
             <div className="h-[50px]">
               <img src={logo} alt="Website Logo" className="w-[184px] hidden" />
             </div>
-            <div className="w-[400px]">
-              <h1 className="text-4xl text-white font-['Open_Sans'] font-bold leading-[60px]">
+            <div className="w-[480px]">
+              <h1 className="text-5xl text-white font-['Open_Sans'] font-bold leading-[60px]">
                 Managing your Social <br />
                 Media accounts is easy <br />
                 with Synkify
               </h1>
-              <p className="text-lg text-white font-[Poppins] font-normal mt-[30px]">
+              <p className="text-xl text-white font-[Poppins] font-normal mt-[30px]">
                 You can post instant content with Synkify whenever you want to
                 your selected social media accounts.
               </p>
@@ -52,7 +127,11 @@ function Login() {
       {/* Right Column */}
       <section className="grid place-items-center bg-[#EBEAEB] overflow-y-scroll">
         <div className="w-[90%] lg:w-4/5 py-[40px] flex flex-col">
-          <img src={logo} alt="Website Logo" className="w-[100px] lg:w-[184px] mx-auto mb-8 lg:hidden" />
+          <img
+            src={logo}
+            alt="Website Logo"
+            className="w-[100px] lg:w-[184px] mx-auto mb-8 lg:hidden"
+          />
           <h2 className="text-2xl lg:text-4xl text-[#C58865] text-center font-['Open_Sans'] font-bold leading-[36px]">
             LOGIN
           </h2>
@@ -60,12 +139,14 @@ function Login() {
             <span className="font-bold">Welcome!</span> Sign in to stay
             connected on Synkify
           </h3>
-          <form className="flex flex-col gap-[30px]">
+          <p>{error && error}</p>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-[30px]">
             <TextInput
               id="email"
               title="Email Address"
               placeholder="Enter your Email Address"
               type="email"
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <TextInput
@@ -73,6 +154,7 @@ function Login() {
               title="Password"
               placeholder="Enter your Password"
               type="password"
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
             <div className="flex justify-between">
@@ -97,6 +179,7 @@ function Login() {
             <input
               type="submit"
               value="LOG IN YOUR ACCOUNT"
+              onClick={isValid}
               className="text-white text-sm lg:text-lg bg-[#013135] py-5 px-6 my-0 mx-auto"
             />
           </form>

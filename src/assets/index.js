@@ -4,10 +4,11 @@ import heroImage from "./heroImage.png";
 import twitter from "./twitter-icon.png";
 import synkifyText from "./Synkify-Text.png";
 import logo from "./logo.png";
+import synkify from "./synkify.png";
 import background from "./bg.png";
 import google from "./google.png";
-import heroDisplay from "./hero-display.png";
-import featuresImage from "./features.png";
+import heroDisplay from "./heroImage.svg";
+import featuresImage from "./features.svg";
 import message from "./message.png";
 import audience from "./audience.png";
 import getStarted from "./get--started.png";
@@ -27,6 +28,7 @@ export {
 	twitter,
 	synkifyText,
 	logo,
+	synkify,
 	background,
 	google,
 	message,
