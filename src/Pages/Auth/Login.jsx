@@ -79,7 +79,7 @@ function Login() {
   };
 
   return (
-    <main className="h-screen grid lg:grid-cols-2">
+    <main className="h-screen grid lg:grid-cols-2" style={{ width: '70%', margin: '80px auto', }}>
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"
@@ -90,13 +90,13 @@ function Login() {
             <div className="h-[50px]">
               <img src={logo} alt="Website Logo" className="w-[184px] hidden" />
             </div>
-            <div className="w-[480px]">
-              <h1 className="text-5xl text-white font-['Open_Sans'] font-bold leading-[60px]">
+            <div className="w-[400px]">
+              <h1 className="text-4xl text-white font-['Open_Sans'] font-bold leading-[60px]">
                 Managing your Social <br />
                 Media accounts is easy <br />
                 with Synkify
               </h1>
-              <p className="text-xl text-white font-[Poppins] font-normal mt-[30px]">
+              <p className="text-lg text-white font-[Poppins] font-normal mt-[30px]">
                 You can post instant content with Synkify whenever you want to
                 your selected social media accounts.
               </p>

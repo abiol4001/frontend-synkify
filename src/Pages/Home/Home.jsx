@@ -11,7 +11,6 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
       <section className="hero lg:flex w-[100%] px-[15px] md:px-[30px] lg:px-[124px] gap-4 pt-[80px] mb-[50px]">
         <div className="lg:w-[55%]">
           <h3 className="text-[40px] text-center md:text-start md:text-[48px] font-[700] leading-tight mb-[30px]">
@@ -92,7 +91,7 @@ const Home = () => {
         <h4 className="text-[36px] font-[700] text-center mb-[30px]">
           Why you should use Synkify
         </h4>
-        <div className="relative xl:h-[1050px]">
+        <div className="relative xl:h-[600px]">
           <div className="hidden xl:absolute -translate-x-[50%] -translate-y-[50%] top-1/2 left-[50%]">
             <img src="Reasons.png" alt="" />
           </div>
@@ -101,16 +100,14 @@ const Home = () => {
               <div
                 key={i}
                 className={`w-[300px] md:w-[350px] xl:w-[280px] flex flex-col items-center p-3 
-              ${
-                i === 0 &&
-                "xl:absolute xl:-translate-x-[50%] xl:-translate-y-[50%] top-24 left-[50%]"
-              }
-              ${i === 1 && "xl:absolute xl:-translate-y-[50%] left-8 top-[45%]"}
-              ${i === 2 && "xl:absolute xl:-translate-y-[50%] right-8 top-[45%]"}
-              ${
-                i === 3 &&
-                "xl:absolute xl:-translate-x-[50%] xl:-translate-y-[50%] -bottom-20 left-[50%]"
-              }`}
+              ${i === 0 &&
+                  "xl:absolute xl:-translate-x-[50%] xl:-translate-y-[50%] top-24 left-[50%]"
+                  }
+              ${i === 1 && "xl:absolute xl:-translate-y-[50%] left-20 top-[45%]"}
+              ${i === 2 && "xl:absolute xl:-translate-y-[50%] right-20 top-[45%]"}
+              ${i === 3 &&
+                  "xl:absolute xl:-translate-x-[50%] xl:-translate-y-[50%] -bottom-20 left-[50%]"
+                  }`}
               >
                 <img src={item.icon} alt="" className="w-[60px] h-[60px]" />
                 <h4 className="text-[20px] text-[#5B9EA5] font-[700] mt-5">
@@ -157,7 +154,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

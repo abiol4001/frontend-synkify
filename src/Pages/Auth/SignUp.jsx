@@ -82,7 +82,7 @@ function SignUp() {
   };
 
   return (
-    <main className="h-screen grid lg:grid-cols-2">
+    <main className="h-screen grid lg:grid-cols-2" style={{ width: '70%', margin: '80px auto', }}>
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"
@@ -93,13 +93,13 @@ function SignUp() {
             <div className="h-[50px]">
               <img src={logo} alt="Website Logo" className="w-[184px] hidden" />
             </div>
-            <div className="w-[480px]">
-              <h1 className="text-5xl text-white font-['Open_Sans'] font-bold leading-[60px]">
+            <div className="w-[400px]">
+              <h1 className="text-4xl text-white font-['Open_Sans'] font-bold leading-[60px]">
                 Synk your social <br />
                 media profiles into <br />
                 one platform
               </h1>
-              <p className="text-xl text-white font-[Poppins] font-normal mt-[30px]">
+              <p className="text-lg text-white font-[Poppins] font-normal mt-[30px]">
                 With just one click on our platform, you may post to all of your
                 social media profiles at once.
               </p>
@@ -215,7 +215,7 @@ function SignUp() {
                 id="terms"
                 className="w-5 h-5"
               />
-              <p className="text-lg lg:text-xl text-[#424848] font-['Open_Sans'] font-normal">
+              <p className="text-lg lg:text-lg text-[#424848] font-['Open_Sans'] font-normal">
                 I have read and agree with{" "}
                 <span className="text-[#C58865]">Terms of Service</span> and our{" "}
                 <span className="text-[#C58865]">Privacy Policy</span>
@@ -225,7 +225,7 @@ function SignUp() {
               type="submit"
               onClick={isValid}
               value="CREATE AN ACCOUNT"
-              className="text-white text-sm lg:text-lg bg-[#013135] py-5 px-6 my-0 mx-auto"
+              className="text-white text-sm lg:text-lg bg-[#013135] py-5 px-5 my-0 mx-auto"
             />
           </form>
           <div>

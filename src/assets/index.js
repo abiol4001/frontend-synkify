@@ -4,6 +4,7 @@ import heroImage from "./heroImage.png";
 import twitter from "./twitter-icon.png";
 import synkifyText from "./Synkify-Text.png";
 import logo from "./logo.png";
+import synkify from "./synkify.svg";
 import background from "./bg.png";
 import google from "./google.png";
 import heroDisplay from "./heroImage.svg";
@@ -14,8 +15,9 @@ import getStarted from "./get--started.png";
 import connect from "./connect.png";
 import audience1 from "./audience-1.png";
 import audience2 from "./audience-2.png";
-import forgetPassword from "./forget-password.png"
+import forgetPassword from "./forget-password.png";
 // import audience3 from "./audience-3.png"
+import faqImage from "./faqImage.svg";
 
 export {
 	bgFooter,
@@ -26,6 +28,7 @@ export {
 	twitter,
 	synkifyText,
 	logo,
+	synkify,
 	background,
 	google,
 	message,
@@ -34,5 +37,6 @@ export {
 	getStarted,
 	audience1,
 	audience2,
-	forgetPassword
+	forgetPassword,
+	faqImage,
 };
