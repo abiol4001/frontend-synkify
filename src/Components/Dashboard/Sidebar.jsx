@@ -14,7 +14,7 @@ import { logo } from '../../assets'
 
 // Dashboard navbar list
 export const sidebarNavList = [
-    { name: "Dashboard", link: '/main', icon: <FaThLarge /> },
+    { name: "Dashboard", link: '/dashboard/main', icon: <FaThLarge /> },
     { name: "Social Account", link: '/account', icon: <FaRecycle /> },
     { name: "Profile", link: '/profile', icon: <FaUserCircle /> },
     { name: "Post", link: '/post', icon: <FaEdit /> },

@@ -14,7 +14,7 @@ import SocialAccount from './SocialAccount';
 const Dashboard = () => {
     return (
         <div className='flex'>
-            <Router>
+            {/* <Router> */}
 
                 <div>
                     <Sidebar />
@@ -22,7 +22,7 @@ const Dashboard = () => {
                 </div>
                 <div>
                     <Header />
-                    <Routes>
+                    {/* <Routes>
                         <Route index element={<Main />} />
                         <Route path="/main" element={<Main />} />
                         <Route path="/account" element={<SocialAccount />} />
@@ -32,10 +32,10 @@ const Dashboard = () => {
                         <Route path="/notification" element={<Notification />} />
                         <Route path="/reminder" element={<Reminder />} />
                         <Route path="/setting" element={<Setting />} />
-                    </Routes>
+                    </Routes> */}
                 </div>
 
-            </Router>
+            {/* </Router> */}
         </div>
     )
 }
