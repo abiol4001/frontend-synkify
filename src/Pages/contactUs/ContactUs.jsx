@@ -1,8 +1,29 @@
-import { Textarea } from "@material-tailwind/react";
-import React from "react";
+import { useEffect } from "react";
+import Aos from 'aos'
 import { TextInput3 } from "../../Components";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaMedium } from "react-icons/fa";
+
+
+
+const contactInfo = [
+  { icon: <FaPhoneAlt />, value: '+2349000000090' },
+  { icon: <FaEnvelope />, value: 'info@synkify.com' },
+  { icon: <FaTwitter />, value: 'https://twitter.com/Synkify' },
+  { icon: <FaFacebook />, value: 'https://Facebook.com/Synkify' },
+  { icon: <FaMedium />, value: 'https://medium.com/Synkify' }
+]
 
 export const ContactUs = () => {
+
+  useEffect(() => {
+    Aos.init();
+    Aos.refresh();
+  }, []);
+
   return (
     <div className="w-full lg:w-4/5 lg:mx-auto lg:h-[80%] my-4 lg:my-8 lg:px-0">
       <h1 className="text-center lg:text-left text-2xl lg:text-4xl font-['Open_Sans'] font-bold">
@@ -44,11 +65,11 @@ export const ContactUs = () => {
               required
             />
 
-            <Textarea
+            <textarea
               placeholder="Message"
-              className="h-28 w-full appearance-none bg-white placeholder-[#696869] border-0 border-b border-[#414041] text-sm lg:text-lg"
+              className="h-28 w-full appearance-none bg-white placeholder-[#696869] border-0 border-b border-[#414041] text-sm lg:text-lg focus:outline-none"
               required
-            ></Textarea>
+            ></textarea>
 
             <input
               type="submit"
@@ -57,12 +78,16 @@ export const ContactUs = () => {
             />
           </form>
         </section>
-        <section className="mt-8 lg:mt-0 lg:grid lg:place-items-center w-full">
+        <section className="mt-8 lg:mt-0 lg:grid lg:place-items-center w-full" data-aos='fade-left' data-aos-delay='300'>
           <div className="px-8 py-8 lg:py-0 h-[100%] lg:h-[70%] bg-[#2B5C5F] lg:w-[70%] flex justify-center items-center">
             <div className="lg:w-[90%]">
               <h3 className="text-center lg:text-left text-xl lg:text-2xl font-['Open_Sans'] font-bold text-white mb-6">Contact Info</h3>
-              <div className="flex flex-col gap-4">
-                <p className="text-center text-white text-lg">+2349000000090</p>
+              {contactInfo.map((info, i) => (
+                <div className="flex gap-4 text-white text-lg py-2">
+                  {info.icon}<p>{info.value}</p>
+                </div>
+              ))}
+              {/* <p className="text-center text-white text-lg">+2349000000090</p>
                 <p className="text-center text-white text-lg">
                   info@synkify.com
                 </p>
@@ -74,8 +99,7 @@ export const ContactUs = () => {
                 </p>
                 <p className="text-center text-white text-lg">
                   https://medium.com/Synkify
-                </p>
-              </div>
+                </p> */}
             </div>
           </div>
         </section>

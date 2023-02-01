@@ -1,8 +1,15 @@
-import React from 'react'
+import { useEffect } from 'react'
+import Aos from 'aos'
 
 const About = () => {
+  useEffect(() => {
+    Aos.init();
+    Aos.refresh();
+  }, []);
+
   return (
-    <div>About</div>
+    <div className='uppercase text-center m-32' data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom" style={{ fontWeight: '700', letterSpacing: '15px' }}>About page coming soon....</div>
   )
 }
 

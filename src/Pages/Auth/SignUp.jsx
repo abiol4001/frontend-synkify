@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { logo, facebook, background, google } from "../../assets";
 import { TextInput } from "../../Components";
+import Aos from 'aos'
 
 const NAME_REGEX = /^[a-zA-Z]+ [a-zA-Z]+$/;
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
@@ -20,6 +21,11 @@ function SignUp() {
   const [errMsg, setErrMsg] = useState("");
   const [allValid, setAllValid] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    Aos.init();
+    Aos.refresh();
+  }, [])
 
   useEffect(() => {
     const result = NAME_REGEX.test(name);
@@ -82,7 +88,7 @@ function SignUp() {
   };
 
   return (
-    <main className="h-screen grid lg:grid-cols-2" style={{ width: '70%', margin: '0px auto 80px', }}>
+    <main className="h-1/2 grid lg:grid-cols-2" style={{ width: '70%', margin: '50px auto 80px', }} data-aos='fade-down' data-aos-delay='300' data-aos-duration='900'>
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"
@@ -146,10 +152,10 @@ function SignUp() {
             alt="Website Logo"
             className="w-[100px] lg:w-[184px] mx-auto mb-8 lg:hidden"
           />
-          <h2 className="text-2xl lg:text-4xl text-[#C58865] font-['Open_Sans'] font-bold leading-[36px] mb-[50px]">
+          <h2 className="text-1xl lg:text-2xl text-[#C58865] font-['Open_Sans'] font-bold leading-[36px]">
             Create an account to use all the features of Synkify's platform
           </h2>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-[30px]">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-[20px]">
             <p>{errMsg}</p>
             <TextInput
               id="name"
@@ -159,7 +165,7 @@ function SignUp() {
               // ref={nameRef}
               onChange={(e) => setName(e.target.value)}
               required
-              // autoComplete="false"
+            // autoComplete="false"
             />
             <p
               className={
@@ -215,7 +221,7 @@ function SignUp() {
                 id="terms"
                 className="w-5 h-5"
               />
-              <p className="text-lg lg:text-lg text-[#424848] font-['Open_Sans'] font-normal">
+              <p className="text-lg lg:text-sm text-[#424848] font-['Open_Sans'] font-normal">
                 I have read and agree with{" "}
                 <span className="text-[#C58865]">Terms of Service</span> and our{" "}
                 <span className="text-[#C58865]">Privacy Policy</span>
@@ -225,19 +231,19 @@ function SignUp() {
               type="submit"
               onClick={isValid}
               value="CREATE AN ACCOUNT"
-              className="text-white text-sm lg:text-lg bg-[#013135] py-5 px-5 my-0 mx-auto"
+              className="text-white text-sm lg:text-sm bg-[#013135] py-3 px-5 my-0 mx-auto"
             />
           </form>
           <div>
-            <p className="text-xl text-[#424848] text-center font-['Open_Sans'] font-normal my-[50px]">
+            <p className="text-xl text-[#424848] text-center font-['Open_Sans'] font-normal my-[10px]">
               OR
             </p>
-            <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 justify-between">
+            <div className="flex flex-col lg:flex-row gap-4 lg:gap-2 justify-between">
               <div className="flex items-center justify-center lg:justify-start rounded-lg gap-1 border border-[#C58865] p-1">
                 <img src={google} className="w-6 h-6" alt="" />
                 <a
                   href="#"
-                  className="text-lg lg:text-xl text-[#424848] font-['Open_Sans'] font-normal"
+                  className="text-sm lg:text-sm text-[#424848] font-['Open_Sans'] font-normal"
                 >
                   Sign up with Google
                 </a>
@@ -246,7 +252,7 @@ function SignUp() {
                 <img src={facebook} className="w-6 h-6" alt="" />
                 <a
                   href="#"
-                  className="text-lg lg:text-xl text-[#424848] font-['Open_Sans'] font-normal"
+                  className="text-sm lg:text-sm text-[#424848] font-['Open_Sans'] font-normal"
                 >
                   Sign up with Facebook
                 </a>

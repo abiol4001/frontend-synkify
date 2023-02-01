@@ -3,11 +3,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { logo, facebook, background } from "../../assets";
 import { TextInput } from "../../Components";
+import Aos from 'aos';
 
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
 const PWD_REGEX =
   /^[!@#$%^&*(),.?":{}|<>]{1}[A-Za-z\d!@#$%^&*(),.?":{}|<>]{7,}$/;
-  // /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+// /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
 function Login() {
   const navigate = useNavigate()
@@ -19,6 +20,11 @@ function Login() {
 
   const [allValid, setAllValid] = useState(false);
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    Aos.init();
+    Aos.refresh();
+  }, [])
 
   useEffect(() => {
     const result = EMAIL_REGEX.test(email);
@@ -79,7 +85,7 @@ function Login() {
   };
 
   return (
-    <main className="h-screen grid lg:grid-cols-2">
+    <main className="h-screen grid lg:grid-cols-2" style={{ width: '70%', margin: '50px auto 80px', }} data-aos='fade-down' data-aos-delay='300' data-aos-duration='900'>
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"
@@ -90,8 +96,8 @@ function Login() {
             <div className="h-[50px]">
               <img src={logo} alt="Website Logo" className="w-[184px] hidden" />
             </div>
-            <div className="w-[480px]">
-              <h1 className="text-5xl text-white font-['Open_Sans'] font-bold leading-[60px]">
+            <div className="w-[400px]">
+              <h1 className="text-4xl text-white font-['Open_Sans'] font-bold leading-[60px]">
                 Managing your Social <br />
                 Media accounts is easy <br />
                 with Synkify
@@ -135,7 +141,7 @@ function Login() {
           <h2 className="text-2xl lg:text-4xl text-[#C58865] text-center font-['Open_Sans'] font-bold leading-[36px]">
             LOGIN
           </h2>
-          <h3 className="font-normal text-[#191819] text-lg lg:text-xl text-center lg:text-left my-[30px]">
+          <h3 className="font-normal text-[#191819] text-lg lg:text-lg text-center lg:text-left my-[20px]">
             <span className="font-bold">Welcome!</span> Sign in to stay
             connected on Synkify
           </h3>
@@ -180,7 +186,7 @@ function Login() {
               type="submit"
               value="LOG IN YOUR ACCOUNT"
               onClick={isValid}
-              className="text-white text-sm lg:text-lg bg-[#013135] py-5 px-6 my-0 mx-auto"
+              className="text-white text-sm lg:text-sm bg-[#013135] p-4 my-0 mx-auto"
             />
           </form>
           <div>

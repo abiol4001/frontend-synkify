@@ -11,6 +11,8 @@ import Footer from "./Components/footer/Footer";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Faq from "./Pages/faq/Faq";
 import { ContactUs } from "./Pages/contactUs/ContactUs";
+import About from './Pages/About/About';
+import Blog from './Pages/blog/Blog';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/forget-pass" element={<ForgetPassword />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
         <Footer />
       </Router>
