@@ -1,88 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { logo, facebook, background, google } from "../../assets";
 import { TextInput } from "../../Components";
 
-const NAME_REGEX = /^[a-zA-Z]+ [a-zA-Z]+$/;
-const EMAIL_REGEX = /\S+@\S+\.\S+/;
-const PWD_REGEX =
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-
 function SignUp() {
-  const [name, setName] = useState("");
-  const [validName, setValidName] = useState(false);
-
-  const [email, setEmail] = useState("");
-  const [validEmail, setValidEmail] = useState(false);
-
-  const [password, setPassword] = useState("");
-  const [validPwd, setValidPwd] = useState(false);
-
-  const [errMsg, setErrMsg] = useState("");
-  const [allValid, setAllValid] = useState(false);
-  const [success, setSuccess] = useState(false);
-
-  useEffect(() => {
-    const result = NAME_REGEX.test(name);
-    setValidName(result);
-  }, [name]);
-
-  useEffect(() => {
-    const result = EMAIL_REGEX.test(email);
-    // console.log(result)
-    setValidEmail(result);
-  }, [email]);
-
-  useEffect(() => {
-    const result = PWD_REGEX.test(password);
-    // console.log(result)
-    setValidPwd(result);
-  }, [password]);
-
-  useEffect(() => {
-    setErrMsg("");
-  }, [name, email, password]);
-
-  console.log(name, email, password);
-
-  const isValid = () => {
-    if (validEmail && validName && validPwd) {
-      return setAllValid(true);
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    const myData = {
-      fullName: name,
-      email: email,
-      password: password,
-    };
-    e.preventDefault();
-    if (allValid) {
-      try {
-        const result = await fetch(
-          "https://synkify-api.onrender.com/api/v1/auth/register",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(myData),
-          }
-        );
-
-        // success();
-        setName("");
-        setEmail("");
-        setPassword("");
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    console.log("All info" + allValid);
-  };
-
   return (
-    <main className="h-screen grid lg:grid-cols-2" style={{ width: '70%', margin: '0px auto 80px', }}>
+    <main className="h-screen grid lg:grid-cols-2" style={{ width: '70%', margin: '80px auto', }}>
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"
@@ -141,69 +63,32 @@ function SignUp() {
       {/* Right Column */}
       <section className="grid place-items-center bg-[#EBEAEB] overflow-y-scroll">
         <div className="w-[90%] lg:w-4/5 py-[40px] flex flex-col">
-
           <img src={logo} alt="Website Logo" className="w-[100px] lg:w-[184px] mx-auto mb-8 lg:hidden" />
           <h2 className="text-2xl lg:text-3xl text-[#C58865] font-['Open_Sans'] font-bold leading-[36px] mb-[50px]">
             Create an account to use all the features of Synkify's platform
           </h2>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-[30px]">
-            <p>{errMsg}</p>
+          <form action="" className="flex flex-col gap-[30px]">
             <TextInput
-              id="name"
+              id="fullname"
               title="Full Name"
               placeholder="Enter your Full name"
               type="text"
-              onChange={(e) => setName(e.target.value)}
               required
-              autoComplete="false"
             />
-            <p
-              className={
-                name && !validName
-                  ? "block text-red-500 text-[13px] -mt-5 transition-all"
-                  : "hidden"
-              }
-            >
-              Input your First and Last name without numbers and symbols
-            </p>
             <TextInput
               id="email"
               title="Email Address"
               placeholder="Enter your Email Address"
               type="email"
-              onChange={(e) => setEmail(e.target.value)}
               required
-              autoComplete="false"
             />
-            <p
-              className={
-                email && !validEmail
-                  ? "block text-red-500 text-[13px] -mt-5 transition-all"
-                  : "hidden"
-              }
-            >
-              Enter a valid Email address.
-            </p>
             <TextInput
               id="password"
               title="Password"
               placeholder="Enter your Password"
               type="password"
-              onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <p
-              className={
-                password && !validPwd
-                  ? "block text-red-500 text-[13px] -mt-5"
-                  : "hidden"
-              }
-            >
-              8 to 24 characters <br />
-              Must include uppercase and lowercase letters, a number and special
-              character <br />
-              Allowed special characters: !@#$
-            </p>
             <div className="flex items-center gap-3">
               <input
                 type="checkbox"
@@ -219,7 +104,6 @@ function SignUp() {
             </div>
             <input
               type="submit"
-              onClick={isValid}
               value="CREATE AN ACCOUNT"
               className="text-white text-sm lg:text-lg bg-[#013135] py-5 px-5 my-0 mx-auto"
             />
