@@ -17,10 +17,10 @@ const Home = () => {
             A simpler way to connect with your audience across all social
             networks
           </h3>
-          <p className="text-[20px] text-center md:text-start md:text-[24px] font-[400] text-[#050505] mb-[40px]">
-            Our platform aids in your audience growth. With Synkify, you will
-            connect effectively and keep track of all engagements,set automated
-            reminders and have your contents scheduled ahead.
+          <p className="text-[20px] text-center md:text-start md:text-[24px] font-[400] font-['Open_Sans] text-[#050505] mb-[40px]">
+            With Synkify, you will connect effectively and keep track of all
+            engagements,set automated reminders and have your contents scheduled
+            ahead.
           </p>
           <Link to="/sign-up" className="mx-auto">
             <button className="bg-[#013135CC] text-[#FFFEFF] lg:w-[350px] w-[100%] h-[75px] lg:m-0 border-none outline-none hover:scale-105 hover:bg-[#013135] transition-all mb-10">
@@ -58,15 +58,16 @@ const Home = () => {
           Integrate multiple social media platforms on one Interface
         </h4>
         <div className="lg:flex mt-14">
-          <div className="lg:w-1/2 mb-6">
-            <img src={featuresImage} alt="" className="w-[100%]" />
+          <div className="lg:w-1/2 h-[626px]">
+            <img src={featuresImage} alt="" className="w-[100%] h-[100%]" />
           </div>
-          <div className="flex flex-col lg:w-1/2 items-center lg:items-end md:mt-24">
+          <div className="flex flex-col lg:w-1/2 items-center lg:items-end py-6">
             {featuresList.map((item, i) => (
               <div
                 key={i}
-                className={`max-w-[486px] flex flex-col items-center border border-1 border-[#5B9EA5] rounded-lg p-3 group hover:bg-[#5B9EA5] transition-all ${i === 0 ? "" : "mt-6"
-                  }`}
+                className={`max-w-[486px] flex flex-col items-center border border-1 border-[#5B9EA5] rounded-lg p-3 group hover:bg-[#5B9EA5] transition-all ${
+                  i === 0 ? "" : "mt-4"
+                }`}
               >
                 <img
                   src={item.icon}
@@ -99,14 +100,21 @@ const Home = () => {
               <div
                 key={i}
                 className={`w-[300px] md:w-[350px] xl:w-[280px] flex flex-col items-center p-3 
-              ${i === 0 &&
-                  "xl:absolute xl:-translate-x-[50%] xl:-translate-y-[50%] top-24 left-[50%]"
-                  }
-              ${i === 1 && "xl:absolute xl:-translate-y-[50%] left-20 top-[45%]"}
-              ${i === 2 && "xl:absolute xl:-translate-y-[50%] right-20 top-[45%]"}
-              ${i === 3 &&
-                  "xl:absolute xl:-translate-x-[50%] xl:-translate-y-[50%] -bottom-20 left-[50%]"
-                  }`}
+              ${
+                i === 0 &&
+                "xl:absolute xl:-translate-x-[50%] xl:-translate-y-[50%] top-24 left-[50%]"
+              }
+              ${
+                i === 1 && "xl:absolute xl:-translate-y-[50%] left-20 top-[45%]"
+              }
+              ${
+                i === 2 &&
+                "xl:absolute xl:-translate-y-[50%] right-20 top-[45%]"
+              }
+              ${
+                i === 3 &&
+                "xl:absolute xl:-translate-x-[50%] xl:-translate-y-[50%] -bottom-20 left-[50%]"
+              }`}
               >
                 <img src={item.icon} alt="" className="w-[60px] h-[60px]" />
                 <h4 className="text-[20px] text-[#5B9EA5] font-[700] mt-5">

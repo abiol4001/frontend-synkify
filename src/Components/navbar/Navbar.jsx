@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { navbarList } from "../../Data/navbar";
+import { synkify } from "../../assets";
 import { BiMenu } from "react-icons/bi";
 import MobileNav from "./MobileNav";
 
@@ -8,12 +9,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="py-4 px-10 md:px-[100px] max-w-[1600px] w-[100%] md:mt-4 mx-auto flex justify-between items-center">
+    <div className="px-10 md:px-[100px] max-w-[1600px] w-[100%] md:mt-4 mx-auto flex justify-between items-center">
       <Link to="/">
-        <img src="" alt="" />
-        <p className="tablet:text-[28px] text-[18px] text-blue-400 font-[700]">
-          {navbarList.logo}
-        </p>
+        <img src={synkify} alt="logo" className="w-[120px] h-[60px]" />
       </Link>
 
       <div className=" md:w-[80%] lg:w-[65%] ">
