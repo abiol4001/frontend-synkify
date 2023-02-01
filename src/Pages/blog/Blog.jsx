@@ -8,7 +8,7 @@ const Blog = () => {
     }, []);
 
     return (
-        <div className='uppercase text-center m-32' data-aos="fade-up"
+        <div className='uppercase text-center m-32 text-2xl' data-aos="fade-up"
             data-aos-anchor-placement="top-bottom" style={{ fontWeight: '700', letterSpacing: '15px' }}>Blog page coming soon....</div>
     )
 }

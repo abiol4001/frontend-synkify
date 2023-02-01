@@ -186,7 +186,7 @@ function Login() {
               type="submit"
               value="LOG IN YOUR ACCOUNT"
               onClick={isValid}
-              className="text-white text-sm lg:text-sm bg-[#013135] p-4 my-0 mx-auto"
+              className="text-white text-sm lg:text-sm bg-[#013135] p-4 my-0 mx-auto cursor-pointer border hover:bg-white hover:text-[#013135] hover:border-[#013135]"
             />
           </form>
           <div>

@@ -20,7 +20,7 @@ const Home = () => {
     <>
       <section className="hero lg:flex w-[100%] px-[15px] md:px-[30px] lg:px-[124px] gap-4 pt-[40px] mb-[50px]">
         <div className="lg:w-[55%]">
-          <h3 className="text-[40px] text-center md:text-start md:text-[48px] font-[700] leading-tight mb-[30px]" data-aos="fade-down" data-aos-once='false'>
+          <h3 className="text-[40px] text-center md:text-start md:text-[42px] font-[700] leading-tight mb-[30px]" data-aos="fade-down" data-aos-once='false'>
             A simpler way to connect with your audience across all social
             networks
           </h3>

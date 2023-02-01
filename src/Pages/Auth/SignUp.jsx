@@ -231,7 +231,7 @@ function SignUp() {
               type="submit"
               onClick={isValid}
               value="CREATE AN ACCOUNT"
-              className="text-white text-sm lg:text-sm bg-[#013135] py-3 px-5 my-0 mx-auto"
+              className="text-white text-sm lg:text-sm bg-[#013135] py-3 px-5 my-0 mx-auto cursor-pointer border hover:bg-white hover:text-[#013135] hover:border-[#013135]"
             />
           </form>
           <div>
