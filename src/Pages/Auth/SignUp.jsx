@@ -141,12 +141,9 @@ function SignUp() {
       {/* Right Column */}
       <section className="grid place-items-center bg-[#EBEAEB] overflow-y-scroll">
         <div className="w-[90%] lg:w-4/5 py-[40px] flex flex-col">
-          <img
-            src={logo}
-            alt="Website Logo"
-            className="w-[100px] lg:w-[184px] mx-auto mb-8 lg:hidden"
-          />
-          <h2 className="text-2xl lg:text-4xl text-[#C58865] font-['Open_Sans'] font-bold leading-[36px] mb-[50px]">
+
+          <img src={logo} alt="Website Logo" className="w-[100px] lg:w-[184px] mx-auto mb-8 lg:hidden" />
+          <h2 className="text-2xl lg:text-3xl text-[#C58865] font-['Open_Sans'] font-bold leading-[36px] mb-[50px]">
             Create an account to use all the features of Synkify's platform
           </h2>
           <form onSubmit={handleSubmit} className="flex flex-col gap-[30px]">
