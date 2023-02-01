@@ -82,7 +82,7 @@ function SignUp() {
   };
 
   return (
-    <main className="h-screen grid lg:grid-cols-2" style={{ width: '70%', margin: '80px auto', }}>
+    <main className="h-screen grid lg:grid-cols-2" style={{ width: '70%', margin: '0px auto 80px', }}>
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"
@@ -156,15 +156,14 @@ function SignUp() {
               title="Full Name"
               placeholder="Enter your Full name"
               type="text"
-              // ref={nameRef}
               onChange={(e) => setName(e.target.value)}
               required
-              // autoComplete="false"
+              autoComplete="false"
             />
             <p
               className={
                 name && !validName
-                  ? "block text-red-500 text-[16px] -mt-5 transition-all"
+                  ? "block text-red-500 text-[13px] -mt-5 transition-all"
                   : "hidden"
               }
             >
@@ -182,7 +181,7 @@ function SignUp() {
             <p
               className={
                 email && !validEmail
-                  ? "block text-red-500 text-[16px] -mt-5 transition-all"
+                  ? "block text-red-500 text-[13px] -mt-5 transition-all"
                   : "hidden"
               }
             >
@@ -199,7 +198,7 @@ function SignUp() {
             <p
               className={
                 password && !validPwd
-                  ? "block text-red-500 text-[16px] -mt-5"
+                  ? "block text-red-500 text-[13px] -mt-5"
                   : "hidden"
               }
             >
