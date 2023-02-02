@@ -75,6 +75,7 @@ function Login() {
           password,
         })
         .then((res) => {
+          console.log(res);
           localStorage.setItem("token", res.data.token)
           navigate("/dashboard/main")
           // window.location.href = "/dashboard/main"
@@ -86,7 +87,7 @@ function Login() {
   };
 
   return (
-    <main className="h-screen grid lg:grid-cols-2" style={{ width: '70%', margin: '50px auto 80px', }} data-aos='fade-down' data-aos-delay='300' data-aos-duration='900'>
+    <main className="h-screen grid lg:grid-cols-2 w-[100%] px-4 lg:px-0 lg:w-[70%]" style={{ margin: '50px auto 80px', }} data-aos='fade-down' data-aos-delay='300' data-aos-duration='900'>
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"
@@ -142,7 +143,7 @@ function Login() {
           <h2 className="text-2xl lg:text-4xl text-[#C58865] text-center font-['Open_Sans'] font-bold leading-[36px]">
             LOGIN
           </h2>
-          <h3 className="font-normal text-[#191819] text-lg lg:text-lg text-center lg:text-left my-[20px]">
+          <h3 className="font-normal text-[#191819] text-base md:text-lg text-center lg:text-left my-[20px]">
             <span className="font-bold">Welcome!</span> Sign in to stay
             connected on Synkify
           </h3>
@@ -172,13 +173,13 @@ function Login() {
                   id="terms"
                   className="w-5 h-5"
                 />
-                <p className="text-xl text-[#C58865] font-['Open_Sans'] font-normal">
+                <p className="text-sm md:text-xl text-[#C58865] font-['Open_Sans'] font-normal">
                   Remember Me
                 </p>
               </div>
               <a
                 href="/forget-pass"
-                className="text-xl text-[#C58865] font-['Open_Sans'] font-normal"
+                className="text-sm md:text-xl text-[#C58865] font-['Open_Sans'] font-normal"
               >
                 Forgot Password
               </a>

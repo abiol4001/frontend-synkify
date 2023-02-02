@@ -4,7 +4,7 @@ import { TextInput2 } from "../../Components";
 
 function ForgetPassword() {
   return (
-    <main className="h-screen grid lg:grid-cols-2" style={{ width: '70%', margin: '80px auto', }}>
+    <main className="h-full lg:h-screen grid lg:grid-cols-2 w-[100%] px-4 lg:px-0 lg:w-[70%] my-[20px] lg:my-[80px] mx-auto">
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"
@@ -14,11 +14,11 @@ function ForgetPassword() {
       <section className="grid place-items-center bg-[#f5f5f5] overflow-y-scroll">
         <div className="w-[90%] lg:w-4/5 py-[40px] flex flex-col">
           <img src={logo} alt="Website Logo" className="w-[100px] lg:w-[184px] mx-auto mb-8" />
-          <h2 className="text-2xl lg:text-4xl text-[#1A4F52] text-center font-['Open_Sans'] font-bold leading-[36px] mb-[50px]">
+          <h2 className="text-2xl lg:text-4xl text-[#1A4F52] text-center font-['Open_Sans'] font-bold leading-[36px] mb-[20px] md:mb-[50px]">
             Forgot Password?
           </h2>
 
-          <h3 className="font-normal text-[#191819] text-lg lg:text-xl text-center lg:text-left mb-[30px]">
+          <h3 className="font-normal text-[#191819] text-sm md:text-xl text-center lg:text-left mb-[30px]">
             Do not panic, we’ve got you covered. Kindly, input the email
             associated with your account, and we will send you a reset link.
           </h3>
