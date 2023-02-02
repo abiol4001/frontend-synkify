@@ -11,7 +11,7 @@ import Reminder from './Reminder';
 import Setting from './Setting';
 import SocialAccount from './SocialAccount';
 
-const Dashboard = () => {
+const Dashboard = ({ children }) => {
     return (
         <div className='flex'>
             <div>
