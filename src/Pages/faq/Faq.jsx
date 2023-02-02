@@ -40,10 +40,7 @@ const Faq = () => {
                     How does Synkify platform works?
                 </AccordionHeader>
                 <AccordionBody>
-                    We&apos;re not always in the position that we want to be at.
-                    We&apos;re constantly growing. We&apos;re constantly making mistakes.
-                    We&apos;re constantly trying to express ourselves and actualize our
-                    dreams.
+                    Synkify platform allows you to integrate multiple social media platforms.
                 </AccordionBody>
             </Accordion>
             <Accordion open={open === 2} icon={<Icon id={2} open={open} />} data-aos='fade-up' data-aos-delay='900' data-aos-duration='900'>
@@ -51,10 +48,7 @@ const Faq = () => {
                     How do I link my social media profiles and groups?
                 </AccordionHeader>
                 <AccordionBody>
-                    We&apos;re not always in the position that we want to be at.
-                    We&apos;re constantly growing. We&apos;re constantly making mistakes.
-                    We&apos;re constantly trying to express ourselves and actualize our
-                    dreams.
+                    From the User dashboard, click on accounts to link all your social media profiles and groups
                 </AccordionBody>
             </Accordion>
             <Accordion open={open === 3} icon={<Icon id={3} open={open} />} data-aos='fade-up' data-aos-delay='1200' data-aos-duration='900'>
@@ -62,10 +56,7 @@ const Faq = () => {
                     How do I send instant posts to all platforms at once?
                 </AccordionHeader>
                 <AccordionBody>
-                    We&apos;re not always in the position that we want to be at.
-                    We&apos;re constantly growing. We&apos;re constantly making mistakes.
-                    We&apos;re constantly trying to express ourselves and actualize our
-                    dreams.
+                    From the User dashboard, click on posts to link all your social media profiles and groups.
                 </AccordionBody>
             </Accordion>
             <Accordion open={open === 4} icon={<Icon id={4} open={open} />} data-aos='fade-up' data-aos-delay='1500' data-aos-duration='900'>
@@ -73,10 +64,7 @@ const Faq = () => {
                     Is Synkify a free or paid platform?
                 </AccordionHeader>
                 <AccordionBody>
-                    We&apos;re not always in the position that we want to be at.
-                    We&apos;re constantly growing. We&apos;re constantly making mistakes.
-                    We&apos;re constantly trying to express ourselves and actualize our
-                    dreams.
+                    Accessing features on the platform is free. create an account to integrate your social media accounts and enjoy the features for free.
                 </AccordionBody>
             </Accordion>
             <Accordion open={open === 5} icon={<Icon id={5} open={open} />} data-aos='fade-up' data-aos-delay='1800' data-aos-duration='900'>
