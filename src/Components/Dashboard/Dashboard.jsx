@@ -11,7 +11,7 @@ import Reminder from './Reminder';
 import Setting from './Setting';
 import SocialAccount from './SocialAccount';
 
-const Dashboard = () => {
+const Dashboard = ({ children }) => {
     return (
         <div className='flex'>
             {/* <Router> */}
@@ -22,6 +22,8 @@ const Dashboard = () => {
                 </div>
                 <div>
                     <Header />
+
+                    {children}
                     {/* <Routes>
                         <Route index element={<Main />} />
                         <Route path="/main" element={<Main />} />
@@ -34,8 +36,6 @@ const Dashboard = () => {
                         <Route path="/setting" element={<Setting />} />
                     </Routes> */}
                 </div>
-
-            {/* </Router> */}
         </div>
     )
 }

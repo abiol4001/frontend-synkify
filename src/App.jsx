@@ -10,22 +10,21 @@ import Faq from "./Pages/faq/Faq";
 import { ContactUs } from "./Pages/contactUs/ContactUs";
 import Main from "./Components/Dashboard/Main";
 import Protected from "./Protected";
-import PagesLayout from "./Components/PagesLayout";
+
 
 function App() {
   return (
     <div className="max-w-[1600px] mx-auto">
+    
       <Router>
         {/* <ComingSoon />*/}
         <Routes>
-          <Route path="/" element={<PagesLayout />}>
-            <Route index element={<Home />} />
-            <Route path="/sign-up" element={<SignUp />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/forget-pass" element={<ForgetPassword />} />
-            <Route path="/faq" element={<Faq />} />
-            <Route path="/contact" element={<ContactUs />} />
-          </Route>
+          <Route index element={<Home />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/forget-pass" element={<ForgetPassword />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/contact" element={<ContactUs />} />
 
           <Route
             path="/dashboard"
