@@ -76,7 +76,8 @@ function Login() {
         })
         .then((res) => {
           localStorage.setItem("token", res.data.token)
-          navigate("/dashboard")
+          navigate("/dashboard/main")
+          // window.location.href = "/dashboard/main"
         })
         .catch((err) => console.error(err));
 
