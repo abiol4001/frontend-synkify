@@ -21,7 +21,7 @@ const Navbar = () => {
               borderBottom: isActive ? '2px solid #2B5C5F' : 'none',
               fontWeight: isActive ? '700' : '400'
             })}>
-              <li className="p-3 mb-2 md:mb-0 text-[#696869] navbar hover:border-b-2 hover:border-[#2B5C5F] hover:text-[#2B5C5F]">
+              <li className="p-3 mb-2 md:mb-0 text-[#696869] navbar hover:text-[#2B5C5F]">
                 {page}
               </li>
             </NavLink>

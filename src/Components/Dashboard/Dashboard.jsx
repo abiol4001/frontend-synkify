@@ -14,28 +14,25 @@ import SocialAccount from './SocialAccount';
 const Dashboard = ({ children }) => {
     return (
         <div className='flex'>
-            {/* <Router> */}
+            <div>
+                <Sidebar />
 
-                <div>
-                    <Sidebar />
+            </div>
+            <div>
+                <Header />
+                <Routes>
+                    <Route index element={<Main />} />
+                    <Route path="main" element={<Main />} />
+                    <Route path="account" element={<SocialAccount />} />
+                    <Route path="profile" element={<Profile />} />
+                    <Route path="post" element={<Post />} />
+                    <Route path="schedule" element={<Schedule />} />
+                    <Route path="notification" element={<Notification />} />
+                    <Route path="reminder" element={<Reminder />} />
+                    <Route path="setting" element={<Setting />} />
+                </Routes>
+            </div>
 
-                </div>
-                <div>
-                    <Header />
-
-                    {children}
-                    {/* <Routes>
-                        <Route index element={<Main />} />
-                        <Route path="/main" element={<Main />} />
-                        <Route path="/account" element={<SocialAccount />} />
-                        <Route path="/profile" element={<Profile />} />
-                        <Route path="/post" element={<Post />} />
-                        <Route path="/schedule" element={<Schedule />} />
-                        <Route path="/notification" element={<Notification />} />
-                        <Route path="/reminder" element={<Reminder />} />
-                        <Route path="/setting" element={<Setting />} />
-                    </Routes> */}
-                </div>
         </div>
     )
 }
