@@ -11,12 +11,11 @@ import Reminder from './Reminder';
 import Setting from './Setting';
 import SocialAccount from './SocialAccount';
 
-const Dashboard = ({ children }) => {
+const Dashboard = () => {
     return (
         <div className='flex'>
             <div>
                 <Sidebar />
-
             </div>
             <div>
                 <Header />
