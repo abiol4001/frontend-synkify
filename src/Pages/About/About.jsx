@@ -10,12 +10,12 @@ const About = () => {
 
   return (
     <div
-      className="text-center lg:text-start my-24 px-5 md:px-[120px] text-2xl"
+      className="text-center lg:text-start my-24 px-5 md:px-[120px] text-1xl"
       data-aos="fade-up"
       data-aos-anchor-placement="top-bottom"
-      // style={{ fontWeight: "700", letterSpacing: "15px" }}
+    // style={{ fontWeight: "700", letterSpacing: "15px" }}
     >
-      <h1 className="text-center text-[48px] mb-24">About us</h1>
+      <h1 className="text-center text-[30px] mb-4">About us</h1>
       <p className="">
         Welcome to our innovative social media management platform! We
         understand the daily challenges of managing multiple social media
