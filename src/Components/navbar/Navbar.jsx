@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="px-10 md:px-[100px] max-w-[1600px] w-[100%] md:mt-4 mx-auto flex justify-between items-center">
+    <div className="px-4 md:px-[100px] max-w-[1600px] w-[100%] md:mt-4 mx-auto flex justify-between items-center">
       <Link to="/">
         <img src={synkify} alt="logo" className="w-[120px] h-[60px]" />
       </Link>

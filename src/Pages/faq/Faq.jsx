@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 import Aos from 'aos';
 import { faqImage } from '../../assets'
 
@@ -93,7 +94,7 @@ const Faq = () => {
                 <h3 className="text-center text-2xl" style={{ fontWeight: '700', lineHeight: '36px' }}>You didn’t find an answer to your question here?</h3>
                 <h4 className="text-center mb-8">Kindly, reach out to our support team here for further answers </h4>
                 <img src={faqImage} alt="woman on FAQ" />
-                <a href="/contact" className="text-center py-5 px-6 text-white mt-8" style={{ background: '#2B5C5F' }}>CONTACT US</a>
+                <Link to="/contact" className="text-center py-5 px-6 text-white mt-8" style={{ background: '#2B5C5F' }}>CONTACT US</Link>
             </div>
         </div>
     );
