@@ -22,17 +22,17 @@ const SocialAccount = () => {
                 </div>
                 <div className='w-60 h-56 flex flex-col justify-center items-center'>
                     <div className='border border-black w-full h-20' style={{ textAlign: 'center', backgroundColor: '#EBEAEB', padding: '15px 95px' }}><FaInstagram fontSize='40px' /></div>
-                    <div className='border border-black w-full h-20 py-6 text-2xl'>Twitter</div>
+                    <div className='border border-black w-full h-20 py-6 text-2xl'>Instagram</div>
                     <button className='py-2 px-8 rounded my-3' style={{ color: '#050505', border: '1px solid #050505' }}>Connect</button>
                 </div>
                 <div className='w-60 h-56 flex flex-col justify-center items-center'>
                     <div className='border border-black w-full h-20' style={{ textAlign: 'center', backgroundColor: '#00A4F2', padding: '15px 95px' }}><FaLinkedin fontSize='40px' color='white' /></div>
-                    <div className='border border-black w-full h-20 py-6 text-2xl'>Twitter</div>
+                    <div className='border border-black w-full h-20 py-6 text-2xl'>LinkedIn</div>
                     <button className='py-2 px-8 rounded my-3' style={{ color: '#050505', border: '1px solid #050505' }}>Connect</button>
                 </div>
                 <div className='w-60 h-56 flex flex-col justify-center items-center'>
                     <div className='border border-black w-full h-20' style={{ textAlign: 'center', backgroundColor: '#00A4F2', padding: '15px 95px' }}><FaFacebook fontSize='40px' color='white' /></div>
-                    <div className='border border-black w-full h-20 py-6 text-2xl'>Twitter</div>
+                    <div className='border border-black w-full h-20 py-6 text-2xl'>Facebook</div>
                     <button className='py-2 px-8 rounded my-3' style={{ color: '#050505', border: '1px solid #050505' }}>Connect</button>
                 </div>
             </div>
