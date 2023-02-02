@@ -4,7 +4,6 @@ import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
-import Dashboard from './Dashboard';
 
 const SocialAccount = () => {
     return (
