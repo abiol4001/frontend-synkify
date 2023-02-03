@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import axios from "../../api/axios";
 import { logo, facebook, background, google } from "../../assets";
 import { TextInput } from "../../Components";
-import Aos from 'aos'
+import Aos from "aos";
 
 const NAME_REGEX = /^[a-zA-Z]+ [a-zA-Z]+$/;
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
@@ -18,6 +19,8 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [validPwd, setValidPwd] = useState(false);
 
+  const [isChecked, setIsChecked] = useState(false);
+
   const [errMsg, setErrMsg] = useState("");
   const [allValid, setAllValid] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -25,7 +28,7 @@ function SignUp() {
   useEffect(() => {
     Aos.init();
     Aos.refresh();
-  }, [])
+  }, []);
 
   useEffect(() => {
     const result = NAME_REGEX.test(name);
@@ -48,47 +51,45 @@ function SignUp() {
     setErrMsg("");
   }, [name, email, password]);
 
-  console.log(name, email, password);
+  console.log(name, email, password, isChecked);
 
   const isValid = () => {
-    if (validEmail && validName && validPwd) {
+    if (validEmail && validName && validPwd && isChecked) {
       return setAllValid(true);
     }
   };
 
   const handleSubmit = async (e) => {
-    const myData = {
-      fullName: name,
-      email: email,
-      password: password,
-    };
     e.preventDefault();
     if (allValid) {
-      try {
-        const result = await fetch(
-          "https://synkify-api.onrender.com/api/v1/auth/register",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(myData),
-          }
-        );
-
-        // success();
+     try {
+        const response = await axios.post("/register", {
+          fullName: name,
+          email,
+          password,
+        });
+        success();
         setName("");
         setEmail("");
         setPassword("");
+        console.log(response.data);
       } catch (error) {
-        console.log(error)
+        console.error(error);
       }
     }
-    console.log("All info" + allValid);
+    else {
+      return setErrMsg("Fill the required field(s)*")
+    }
   };
 
   return (
-    <main className="h-1/2 grid lg:grid-cols-2 w-[100%] px-4 lg:px-0 lg:w-[70%]" style={{ margin: '50px auto 80px', }} data-aos='fade-down' data-aos-delay='300' data-aos-duration='900'>
+    <main
+      className="h-1/2 grid lg:grid-cols-2 w-[100%] px-4 lg:px-0 lg:w-[70%]"
+      style={{ margin: "50px auto 80px" }}
+      data-aos="fade-down"
+      data-aos-delay="300"
+      data-aos-duration="900"
+    >
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"
@@ -156,16 +157,14 @@ function SignUp() {
             Create an account to use all the features of Synkify's platform
           </h2>
           <form onSubmit={handleSubmit} className="flex flex-col gap-[20px]">
-            <p>{errMsg}</p>
+            <p className=" text-red-500 text-[16px] mt-3">{errMsg}</p>
             <TextInput
               id="name"
               title="Full Name"
               placeholder="Enter your Full name"
               type="text"
-              // ref={nameRef}
               onChange={(e) => setName(e.target.value)}
               required
-            // autoComplete="false"
             />
             <p
               className={
@@ -219,6 +218,8 @@ function SignUp() {
                 type="checkbox"
                 name="terms"
                 id="terms"
+                checked={isChecked}
+                onChange={(e) => setIsChecked(e.target.checked)}
                 className="w-5 h-5"
               />
               <p className="text-sm md:text-lg text-[#424848] font-['Open_Sans'] font-normal">
