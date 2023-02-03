@@ -88,7 +88,7 @@ function SignUp() {
   };
 
   return (
-    <main className="h-1/2 grid lg:grid-cols-2" style={{ width: '70%', margin: '50px auto 80px', }} data-aos='fade-down' data-aos-delay='300' data-aos-duration='900'>
+    <main className="h-1/2 grid lg:grid-cols-2 w-[100%] px-4 lg:px-0 lg:w-[70%]" style={{ margin: '50px auto 80px', }} data-aos='fade-down' data-aos-delay='300' data-aos-duration='900'>
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"
@@ -221,7 +221,7 @@ function SignUp() {
                 id="terms"
                 className="w-5 h-5"
               />
-              <p className="text-lg lg:text-sm text-[#424848] font-['Open_Sans'] font-normal">
+              <p className="text-sm md:text-lg text-[#424848] font-['Open_Sans'] font-normal">
                 I have read and agree with{" "}
                 <span className="text-[#C58865]">Terms of Service</span> and our{" "}
                 <span className="text-[#C58865]">Privacy Policy</span>
