@@ -6,6 +6,8 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitterSquare } from "react-icons/fa";
+import { FaMedium } from "react-icons/fa";
+
 
 const Footer = () => {
   return (
@@ -46,10 +48,10 @@ const Footer = () => {
           <div>
             <h2 className='my-4 font-[700] text-[24px]'>Follow Us</h2>
             <div className='flex justify-between'>
-              <a href='#!' role='button' className='text-[30px] hover:text-[#BF7B54]'> <FaTwitterSquare /></a>
-              <a href='#!' role='button' className='text-[30px] hover:text-[#BF7B54]'> <FaFacebook /></a>
-              <a href='#!' role='button' className='text-[30px] hover:text-[#BF7B54]'> <FaInstagram /></a>
-              <a href='#!' role='button' className='text-[30px] hover:text-[#BF7B54]'> <FaLinkedin /></a>
+              <a href='https://twitter.com/Synkify' role='button' target='_blank' className='text-[30px] hover:text-[#BF7B54]'> <FaTwitterSquare /></a>
+              <a href='https://Facebook.com/Synkify' role='button' target='_blank' className='text-[30px] hover:text-[#BF7B54]'> <FaFacebook /></a>
+              <a href='https://medium.com/Synkify' role='button' target='_blank' className='text-[30px] hover:text-[#BF7B54]'> <FaMedium /></a>
+              {/* <a href='#!' role='button' className='text-[30px] hover:text-[#BF7B54]'> <FaLinkedin /></a> */}
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "../../api/axios";
-import { logo, facebook, background, google } from "../../assets";
+import { logo, facebook, background, google, synkify, officialLogo } from "../../assets";
 import { TextInput } from "../../Components";
 import Aos from "aos";
 import { Link } from "react-router-dom";
@@ -29,7 +29,7 @@ function SignUp() {
   // const [success, setSuccess] = useState(false);
 
   const success = () =>
-    toast.success("Acoount successfully created, proceed to Login", {
+    toast.success("Account successfully created, proceed to Login", {
       position: toast.POSITION.TOP_CENTER,
     });
 
@@ -70,16 +70,18 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (allValid) {
-     try {
+      try {
         const response = await axios.post("/register", {
           fullName: name,
           email: email,
           password: password,
         });
         success();
-        setName(" ");
-        setEmail(" ");
-        setPassword(" ");
+        setName("");
+        setEmail("");
+        setPassword("");
+        setIsChecked(false);
+        setErrMsg("")
         // console.log(response.data);
       } catch (error) {
         console.error(error);
@@ -106,7 +108,7 @@ function SignUp() {
         <div className="bg-gradient-to-r from-black grid place-items-center">
           <div className="w-[90%] lg:w-4/5 h-screen py-[40px] flex flex-col justify-between">
             <div className="h-[50px]">
-              <img src={logo} alt="Website Logo" className="w-[184px] hidden" />
+              <img src={synkify} alt="Website Logo" className="w-[184px] hidden" />
             </div>
             <div className="w-[400px]">
               <h1 className="text-4xl text-white font-['Open_Sans'] font-bold leading-[60px]">
@@ -158,9 +160,9 @@ function SignUp() {
         <ToastContainer autoClose={5000} />
         <div className="w-[90%] lg:w-4/5 py-[40px] flex flex-col">
           <img
-            src={logo}
+            src={officialLogo}
             alt="Website Logo"
-            className="w-[100px] lg:w-[184px] mx-auto mb-8 lg:hidden"
+            className="w-[150px] lg:w-[184px] mx-auto mb-8 lg:hidden"
           />
           <h2 className="text-1xl lg:text-2xl text-[#C58865] font-['Open_Sans'] font-bold leading-[36px]">
             Create an account to use all the features of Synkify's platform
@@ -172,6 +174,7 @@ function SignUp() {
               title="Full Name"
               placeholder="Enter your Full name"
               type="text"
+              value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
@@ -189,6 +192,7 @@ function SignUp() {
               title="Email Address"
               placeholder="Enter your Email Address"
               type="email"
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
               autoComplete="false"
@@ -207,6 +211,7 @@ function SignUp() {
               title="Password"
               placeholder="Enter your Password"
               type="password"
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />

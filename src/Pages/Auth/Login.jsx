@@ -9,7 +9,7 @@ import Aos from 'aos';
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
 const PWD_REGEX =
   // /^[!@#$%^&*(),.?":{}|<>]{1}[A-Za-z\d!@#$%^&*(),.?":{}|<>]{7,}$/;
-/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
 function Login() {
   const navigate = useNavigate()
@@ -110,23 +110,23 @@ function Login() {
             </div>
             <div className="flex gap-[40px]">
               <Link
-                href="#"
+                to="/contact"
                 className="text-base text-white font-[Poppins] font-normal"
               >
                 Contact Us
               </Link>
               <Link
-                href="#"
+                to="/policy"
                 className="text-base text-white font-[Poppins] font-normal"
               >
                 Privacy Policy
               </Link>
-              <link
-                href="#"
+              <Link
+                to="/term"
                 className="text-base text-white font-[Poppins] font-normal"
               >
                 Terms of Service
-              </link>
+              </Link>
             </div>
           </div>
         </div>

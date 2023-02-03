@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { navbarList } from "../../Data/navbar";
 import { synkify } from "../../assets";
+import { officialLogo } from "../../assets";
 import { BiMenu } from "react-icons/bi";
 import MobileNav from "./MobileNav";
 
