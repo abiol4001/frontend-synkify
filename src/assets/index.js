@@ -18,6 +18,7 @@ import audience2 from "./audience-2.png";
 import forgetPassword from "./forget-password.png";
 // import audience3 from "./audience-3.png"
 import faqImage from "./faqImage.svg";
+import officialLogo from "./officialLogo.jpg";
 
 export {
 	bgFooter,
@@ -39,4 +40,5 @@ export {
 	audience2,
 	forgetPassword,
 	faqImage,
+	officialLogo,
 };
