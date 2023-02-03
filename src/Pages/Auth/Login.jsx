@@ -1,6 +1,7 @@
-import axios, { Axios } from "axios";
+import axios from "../../api/axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { logo, facebook, background } from "../../assets";
 import { TextInput } from "../../Components";
 import Aos from 'aos';
@@ -58,7 +59,7 @@ function Login() {
     e.preventDefault();
     if (allValid) {
       axios
-        .post("https://synkify-api.onrender.com/api/v1/auth/login", {
+        .post("/login", {
           email,
           password,
         })
@@ -67,7 +68,10 @@ function Login() {
           localStorage.setItem("token", res.data.token)
           navigate("/dashboard/main")
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {
+          console.error(err);
+          setErrMsg(err.message)
+        });
 
     }
     else {
@@ -76,7 +80,13 @@ function Login() {
   };
 
   return (
-    <main className="h-screen grid lg:grid-cols-2 w-[100%] px-4 lg:px-0 lg:w-[70%]" style={{ margin: '50px auto 80px', }} data-aos='fade-down' data-aos-delay='300' data-aos-duration='900'>
+    <main
+      className="h-screen grid lg:grid-cols-2 w-[100%] px-4 lg:px-0 lg:w-[70%]"
+      style={{ margin: "50px auto 80px" }}
+      data-aos="fade-down"
+      data-aos-delay="300"
+      data-aos-duration="900"
+    >
       {/* Left Column */}
       <section
         className="bg-cover hidden lg:block"
@@ -99,24 +109,24 @@ function Login() {
               </p>
             </div>
             <div className="flex gap-[40px]">
-              <a
+              <Link
                 href="#"
                 className="text-base text-white font-[Poppins] font-normal"
               >
                 Contact Us
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-base text-white font-[Poppins] font-normal"
               >
                 Privacy Policy
-              </a>
-              <a
+              </Link>
+              <link
                 href="#"
                 className="text-base text-white font-[Poppins] font-normal"
               >
                 Terms of Service
-              </a>
+              </link>
             </div>
           </div>
         </div>
@@ -136,7 +146,7 @@ function Login() {
             <span className="font-bold">Welcome!</span> Sign in to stay
             connected on Synkify
           </h3>
-          <p>{errMsg}</p>
+          <p className="text-red-500 text-[14px] -mt-3 mb-3">{errMsg}</p>
           <form onSubmit={handleSubmit} className="flex flex-col gap-[30px]">
             <TextInput
               id="email"
@@ -166,12 +176,12 @@ function Login() {
                   Remember Me
                 </p>
               </div>
-              <a
-                href="/forget-pass"
+              <Link
+                to="/forget-pass"
                 className="text-sm md:text-xl text-[#C58865] font-['Open_Sans'] font-normal"
               >
                 Forgot Password
-              </a>
+              </Link>
             </div>
             <input
               type="submit"
@@ -185,12 +195,12 @@ function Login() {
               <p className="text-lg lg:text-xl text-[#424848] font-['Open_Sans'] font-normal">
                 Don't have an account?
               </p>
-              <a
-                href="/sign-up"
+              <Link
+                to="/sign-up"
                 className="text-lg lg:text-xl text-[#C58865] font-['Open_Sans'] font-normal"
               >
                 Create an account
-              </a>
+              </Link>
             </div>
           </div>
         </div>
