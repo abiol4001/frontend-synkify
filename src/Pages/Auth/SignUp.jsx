@@ -3,6 +3,9 @@ import axios from "../../api/axios";
 import { logo, facebook, background, google } from "../../assets";
 import { TextInput } from "../../Components";
 import Aos from "aos";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const NAME_REGEX = /^[a-zA-Z]+ [a-zA-Z]+$/;
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
@@ -23,7 +26,12 @@ function SignUp() {
 
   const [errMsg, setErrMsg] = useState("");
   const [allValid, setAllValid] = useState(false);
-  const [success, setSuccess] = useState(false);
+  // const [success, setSuccess] = useState(false);
+
+  const success = () =>
+    toast.success("Acoount successfully created, proceed to Login", {
+      position: toast.POSITION.TOP_CENTER,
+    });
 
   useEffect(() => {
     Aos.init();
@@ -49,7 +57,7 @@ function SignUp() {
 
   useEffect(() => {
     setErrMsg("");
-  }, [name, email, password]);
+  }, [name, email, password, isChecked]);
 
   console.log(name, email, password, isChecked);
 
@@ -65,14 +73,14 @@ function SignUp() {
      try {
         const response = await axios.post("/register", {
           fullName: name,
-          email,
-          password,
+          email: email,
+          password: password,
         });
         success();
-        setName("");
-        setEmail("");
-        setPassword("");
-        console.log(response.data);
+        setName(" ");
+        setEmail(" ");
+        setPassword(" ");
+        // console.log(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -123,30 +131,31 @@ function SignUp() {
               </div>
             </div>
             <div className="flex gap-[40px]">
-              <a
-                href="#"
+              <Link
+                to="#"
                 className="text-base text-white font-[Poppins] font-normal"
               >
                 Contact Us
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className="text-base text-white font-[Poppins] font-normal"
               >
                 Privacy Policy
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className="text-base text-white font-[Poppins] font-normal"
               >
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </section>
       {/* Right Column */}
       <section className="grid place-items-center bg-[#EBEAEB] overflow-y-scroll">
+        <ToastContainer autoClose={5000} />
         <div className="w-[90%] lg:w-4/5 py-[40px] flex flex-col">
           <img
             src={logo}
@@ -263,12 +272,12 @@ function SignUp() {
               <p className="text-lg lg:text-xl text-[#424848] font-['Open_Sans'] font-normal">
                 You have an account already?
               </p>
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="text-lg lg:text-xl text-[#C58865] font-['Open_Sans'] font-normal"
               >
                 LOG IN
-              </a>
+              </Link>
             </div>
           </div>
         </div>
