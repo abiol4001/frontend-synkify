@@ -7,8 +7,8 @@ import Aos from 'aos';
 
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
 const PWD_REGEX =
-  /^[!@#$%^&*(),.?":{}|<>]{1}[A-Za-z\d!@#$%^&*(),.?":{}|<>]{7,}$/;
-// /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+  // /^[!@#$%^&*(),.?":{}|<>]{1}[A-Za-z\d!@#$%^&*(),.?":{}|<>]{7,}$/;
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
 function Login() {
   const navigate = useNavigate()
@@ -19,7 +19,8 @@ function Login() {
   const [validPwd, setValidPwd] = useState(false);
 
   const [allValid, setAllValid] = useState(false);
-  const [error, setError] = useState('')
+  const [errMsg, setErrMsg] = useState("");
+
 
   useEffect(() => {
     Aos.init();
@@ -39,6 +40,10 @@ function Login() {
     console.log(password)
   }, [password]);
 
+  useEffect(() => {
+    setErrMsg("");
+  }, [email, password]);
+
   const isValid = () => {
     if (validEmail && validPwd) {
       return setAllValid(true);
@@ -52,23 +57,6 @@ function Login() {
     };
     e.preventDefault();
     if (allValid) {
-      // const result = await fetch(
-      //   "https://synkify-api.onrender.com/api/v1/auth/login",
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify(myData),
-      //   }
-      // );
-      // if (data.error) {
-      //   setError(data.error);
-      // } else {
-      //   // Redirect the user to the dashboard
-      //   window.location.href = "/dashboard";
-      // }
-
       axios
         .post("https://synkify-api.onrender.com/api/v1/auth/login", {
           email,
@@ -78,12 +66,13 @@ function Login() {
           console.log(res);
           localStorage.setItem("token", res.data.token)
           navigate("/dashboard/main")
-          // window.location.href = "/dashboard/main"
         })
         .catch((err) => console.error(err));
 
     }
-    console.log("All info " + allValid);
+    else {
+      return setError("Fill the required field(s)*");
+    }
   };
 
   return (
@@ -147,7 +136,7 @@ function Login() {
             <span className="font-bold">Welcome!</span> Sign in to stay
             connected on Synkify
           </h3>
-          <p>{error && error}</p>
+          <p>{errMsg}</p>
           <form onSubmit={handleSubmit} className="flex flex-col gap-[30px]">
             <TextInput
               id="email"
