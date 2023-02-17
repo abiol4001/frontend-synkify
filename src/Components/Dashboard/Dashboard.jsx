@@ -12,6 +12,7 @@ import Setting from './Setting';
 import SocialAccount from './SocialAccount';
 
 const Dashboard = () => {
+    const token = localStorage.getItem("Bearer");
     return (
         <div className='flex'>
             <div>
