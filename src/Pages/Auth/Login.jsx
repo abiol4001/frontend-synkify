@@ -65,7 +65,8 @@ function Login() {
         })
         .then((res) => {
           console.log(res);
-          localStorage.setItem("token", res.data.token)
+          localStorage.setItem("Bearer", res.data.token)
+          localStorage.setItem("fullName", res.data.data.fullName)
           navigate("/dashboard/account")
         })
         .catch((err) => {
@@ -75,7 +76,7 @@ function Login() {
 
     }
     else {
-      return setError("Fill the required field(s)*");
+      return setErrMsg("Fill the required field(s)*");
     }
   };
 
